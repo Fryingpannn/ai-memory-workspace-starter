@@ -2,6 +2,8 @@
 
 ## Setup Routing
 
+- If the user asks to install Hermes and the `hermes` command is unavailable, read
+  `prompts/INSTALL-HERMES.md` and stop at its Hermes handoff.
 - If the user says "set up this project", "set up this workspace", or similar while
   starter placeholders remain, read `prompts/START-HERE.md`.
 - If the workspace is already cloned and validated, continue to

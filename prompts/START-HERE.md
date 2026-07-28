@@ -5,6 +5,12 @@ This is the entry point when the user provides a repository URL or says
 
 This file may be read from GitHub before the repository exists locally.
 
+## Precondition
+
+If this file is being read by another agent and the `hermes` command is unavailable,
+follow `prompts/INSTALL-HERMES.md` first and stop at its handoff. Resume this file from
+a real Hermes session.
+
 ## Goal
 
 Create or open the user's private memory-workspace repository, then run the staged

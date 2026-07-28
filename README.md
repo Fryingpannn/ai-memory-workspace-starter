@@ -5,9 +5,29 @@ A Hermes-friendly, files-first workspace that keeps useful context across fresh 
 The workspace belongs to you, not to one model or app. Hermes, Codex, Claude Code, and
 other file-aware agents can all use the same durable Markdown files.
 
+## Start From Zero
+
+If Hermes is not installed, follow
+[`prompts/INSTALL-HERMES.md`](prompts/INSTALL-HERMES.md).
+
+The minimal tutorial setup is:
+
+1. Install the official Hermes CLI.
+2. Choose `Blank Slate` during first-run setup.
+3. Configure one model provider.
+4. Keep only File Operations and Terminal enabled.
+5. Skip gateways, messaging, browser, web, voice, media, automation, plugins, and MCP.
+6. Verify one normal Hermes chat.
+7. Continue with the repository prompt below.
+
+Hermes cannot install itself before it exists. The installation command must be run
+manually or by an already-installed agent such as Codex or Claude. After installation,
+start a real Hermes session for the workspace setup.
+
 ## One-Prompt Setup
 
-Install Hermes, open an empty working directory, run `hermes`, and paste:
+After the minimal installation, open an empty working directory, run `hermes`, and
+paste:
 
 ```text
 Set up my AI memory workspace from this repository:
@@ -36,7 +56,7 @@ locally with pushes to the public starter disabled.
 
 ## Manual Setup Alternative
 
-1. Complete the [official Hermes quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart/) and run `hermes setup`.
+1. Complete `prompts/INSTALL-HERMES.md` or the [official Hermes quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart/).
 2. Use this repository as a GitHub template to create your own private repository.
 3. Clone your new repository and open its folder in a terminal.
 4. Run `hermes`.
@@ -111,6 +131,7 @@ This sidecar layout works without moving existing projects.
 ├── skills/                    reusable procedures
 ├── outputs/                   reviewable deliverables
 └── prompts/
+    ├── INSTALL-HERMES.md      minimal CLI prerequisite
     ├── START-HERE.md          one-prompt bootstrap
     ├── HERMES-SETUP.md        staged setup router
     └── setup/                 short setup stages
