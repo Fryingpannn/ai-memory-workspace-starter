@@ -7,7 +7,7 @@ other file-aware agents can all use the same durable Markdown files.
 
 ## Start With Hermes
 
-1. Complete the official Hermes install and `hermes setup`.
+1. Complete the [official Hermes quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart/) and run `hermes setup`.
 2. Use this repository as a GitHub template to create your own private repository.
 3. Clone your new repository and open its folder in a terminal.
 4. Run `hermes`.
@@ -68,4 +68,3 @@ The workspace is ready when a fresh session can:
 
 Keep passwords, API keys, tokens, credentials, and secret environment files out of Git.
 Use safe or fictional data while learning.
-
