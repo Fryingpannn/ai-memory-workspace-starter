@@ -76,7 +76,7 @@ Do not create a nested memory repository inside another tracked repository by de
 ### SCATTERED
 
 Keep the starter as a sidecar workspace. Register each project in
-`projects/local-paths.md`. Do not symlink or move it.
+`projects/local-paths.md`. Do not move it.
 
 ### MIXED
 

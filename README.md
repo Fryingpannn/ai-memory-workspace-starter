@@ -14,8 +14,8 @@ Set up my AI memory workspace from this repository:
 https://github.com/Fryingpannn/ai-memory-workspace-starter
 
 Start with prompts/START-HERE.md and follow the complete setup workflow.
-Ask only the questions you cannot answer safely. Do not move, symlink, or modify
-my existing projects without approval.
+Ask only the questions you cannot answer safely. Do not move or modify my existing
+projects without approval.
 ```
 
 The agent will:
@@ -70,9 +70,6 @@ By default, existing projects stay where they are. Hermes creates:
 - a gitignored local path map for this machine;
 - sourced memory from selected high-signal documentation.
 
-Symlinks are not used by default because they are less portable across Windows, macOS,
-Git, and multiple machines. Physical reorganization is an optional reviewed migration.
-
 Initial setup connects at most three projects and reads only approved documentation.
 It does not broadly ingest source code or edit connected repositories.
 
@@ -91,7 +88,7 @@ My-Work/
 If the existing outer folder is already a Git repository, place the memory workspace
 beside that outer repository instead of nesting another tracked repository inside it.
 
-This sidecar layout works without moving projects or relying on symlinks.
+This sidecar layout works without moving existing projects.
 
 ## Workspace Map
 

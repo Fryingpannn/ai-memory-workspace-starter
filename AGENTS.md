@@ -7,7 +7,7 @@
 - If the workspace is already cloned and validated, continue to
   `prompts/HERMES-SETUP.md`.
 - Follow the bootstrap and staged setup prompts in order.
-- Do not move, copy, symlink, or edit existing projects during setup without approval.
+- Do not move, copy, or edit existing projects during setup without approval.
 
 ## Purpose
 
@@ -77,7 +77,7 @@ This workspace helps [OWNER OR TEAM] manage [AREAS OF WORK] and produce
 - Load the smallest relevant context.
 - Cite the local file used for durable claims.
 - Do not broadly scan connected project source code when high-signal docs are enough.
-- Do not move, copy, symlink, or rewrite a connected project without approval.
+- Do not move, copy, or rewrite a connected project without approval.
 - Never invent missing context. Stop and report what is missing.
 - Never commit passwords, API keys, tokens, credentials, or secret environment files.
 - Ask before publishing, sending messages, or taking irreversible external actions.

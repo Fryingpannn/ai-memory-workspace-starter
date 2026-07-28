@@ -35,11 +35,6 @@ its machine-specific location in the gitignored `projects/local-paths.md`.
 Update `projects/local-paths.md` on that machine. Do not commit the local path map.
 The tracked project ID and profile should remain the same.
 
-## A Symlink Does Not Work
-
-Remove the optional symlink and use the local path map directly. Symlinks are not
-required and are never the canonical connection.
-
 ## The Outer Folder Is Already a Git Repository
 
 Do not place another tracked memory repository inside it by default. Either deliberately

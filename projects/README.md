@@ -11,7 +11,6 @@ Use this folder to discover and connect active projects.
 Existing repositories do not need to be moved into this folder.
 
 Keep their code where it is. Connect them through the registry and local path map.
-Use symlinks only as optional local conveniences, never as the source of truth.
 
 Ordinary new project folders may live here when they do not need independent Git
 history. Keep a project as a separate repository when permissions, deployment,

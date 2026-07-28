@@ -7,7 +7,7 @@ The user can say:
 
 ```text
 Set up this workspace. I may already have projects. Detect my layout, ask only the
-questions you need, and do not move or link anything without my approval.
+questions you need, and do not move or modify anything without my approval.
 ```
 
 ## Setup Goal
@@ -17,13 +17,13 @@ without forcing the user to reorganize them.
 
 ## Non-Negotiable Defaults
 
-- Do not move, copy, rename, symlink, delete, or rewrite an existing project.
+- Do not move, copy, rename, delete, or rewrite an existing project.
 - Do not add nested repositories, submodules, databases, vector search, or RAG.
 - Do not scan the home directory or unrelated folders.
 - Do not read `.env`, credentials, tokens, private keys, or secret folders.
 - Do not edit files inside a connected project during setup.
 - Do not stage, commit, push, publish, or create remotes.
-- Prefer a project registry plus a local path map over symlinks.
+- Connect existing projects through the project registry and local path map.
 - Ask before any action that changes existing work.
 
 ## Routed Workflow
@@ -40,7 +40,7 @@ Follow these files in order. Read only one stage at a time.
 7. Show changed files and `git status`, then stop for review.
 
 Read `prompts/setup/04-OPTIONAL-REORGANIZE.md` only when the user explicitly asks
-to move, copy, symlink, nest, or consolidate repositories.
+to move, copy, nest, or consolidate repositories.
 
 ## Supported Scenarios
 

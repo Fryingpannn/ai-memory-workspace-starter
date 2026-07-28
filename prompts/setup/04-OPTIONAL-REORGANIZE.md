@@ -12,24 +12,6 @@ Keep projects where they are and use:
 - a gitignored local path map;
 - relative paths when projects share an outer folder.
 
-## Symlink Policy
-
-Do not use symlinks as the canonical connection.
-
-Reasons:
-
-- Windows symlink creation may require Developer Mode or elevated permissions;
-- absolute symlinks break when folders move;
-- links often differ across machines;
-- Git and backup tools may treat links differently.
-
-A symlink may be created as an optional local convenience only when:
-
-- the user explicitly requests it;
-- the target path is validated;
-- the link is gitignored;
-- the registry and local path map remain authoritative.
-
 ## Moving a Repository
 
 Moving a repository can preserve its `.git` history, but may break:

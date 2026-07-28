@@ -10,7 +10,6 @@ Existing projects stay where they are.
 - `projects/<project-id>.md` is the tracked profile for one project.
 - `projects/local-paths.md` maps project IDs to paths on this machine.
 - `projects/local-paths.md` is gitignored because paths differ by machine.
-- Symlinks are optional local conveniences, never the source of truth.
 
 ## Validate Each Project
 

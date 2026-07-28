@@ -21,8 +21,8 @@ Set up my AI memory workspace from this repository:
 [REPOSITORY URL]
 
 Start with prompts/START-HERE.md and follow the complete setup workflow.
-Ask only the questions you cannot answer safely. Do not move, symlink, or modify
-my existing projects without approval.
+Ask only the questions you cannot answer safely. Do not move or modify my existing
+projects without approval.
 ```
 
 ## Safety Rules
@@ -31,7 +31,7 @@ my existing projects without approval.
 - Never personalize memory directly in a public starter repository.
 - Never overwrite a non-empty destination folder.
 - Never delete or replace an existing Git remote without approval.
-- Never move, copy, symlink, or edit existing projects during bootstrap.
+- Never move, copy, or edit existing projects during bootstrap.
 - Never read secrets or broad source trees during project intake.
 - Ask before creating a GitHub repository, commit, push, or other external change.
 
