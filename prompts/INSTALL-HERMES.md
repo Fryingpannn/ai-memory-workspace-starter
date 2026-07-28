@@ -4,19 +4,20 @@ Use this when Claude, Codex, or another existing agent is preparing Hermes for t
 
 ## Goal
 
-Install the official Hermes CLI, configure one model provider, enable the useful local
-agent capabilities, verify them, and hand control to Hermes.
+Install the official Hermes CLI, connect the user's existing Codex or supported Claude
+subscription, enable the useful local capabilities, verify them, and hand control to
+Hermes.
 
 The required setup includes:
 
 - File Operations and Terminal;
-- web search and browser automation;
+- browser automation through local Google Chrome;
 - built-in memory capture and session search;
 - skills and skill management;
 - cron and scheduled-task management.
 
-Messaging platforms, external memory providers, MCP servers, voice, smart-home tools,
-and other account integrations are outside this tutorial.
+Standalone web-search providers, messaging platforms, external memory providers, MCP
+servers, voice, smart-home tools, and other integrations are outside this tutorial.
 
 ## Safety Rules
 
@@ -82,14 +83,21 @@ hermes doctor
 In the first-run setup:
 
 1. Choose `Full Setup`.
-2. Configure one model provider and one supported model.
-3. Keep the local terminal backend unless the user explicitly requests isolation.
-4. Enable File Operations, Terminal, web/search, browser, memory, session search,
+2. Detect a usable subscription without reading or copying credentials:
+   - from Codex, use OpenAI Codex with ChatGPT OAuth;
+   - from Claude, use Anthropic OAuth only for Claude Max with extra usage enabled;
+   - if neither works, pause and ask the user to sign in to one of those options.
+3. Use the matching subscription through `hermes model`. Never select, test, or
+   authenticate Bedrock, even if auto-detected. Do not fall back to another provider.
+4. Keep the local terminal backend unless the user explicitly requests isolation.
+5. Enable File Operations, Terminal, browser, memory, session search,
    skills, and cron for the Hermes CLI.
-5. Enable built-in memory capture and user-profile memory.
-6. Install the local browser runtime when offered.
-7. Skip messaging gateways, external memory providers, MCP servers, voice, and other
-   account integrations.
+6. Enable built-in memory capture and user-profile memory.
+7. Connect browser tools to local Google Chrome with `/browser connect`. If Chrome is
+   unavailable, ask before installing a browser.
+8. Do not install `ddgs` or another standalone web-search package.
+9. Skip messaging gateways, external memory providers, MCP servers, voice, and other
+   integrations.
 
 Use `hermes tools` after setup to confirm the CLI toolsets. Do not manually edit global
 Hermes configuration when the setup interface can make the change safely.
