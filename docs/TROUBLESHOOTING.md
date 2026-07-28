@@ -1,5 +1,16 @@
 # Troubleshooting
 
+## The User Only Has the Public Repository Link
+
+Read `prompts/START-HERE.md`. Create a private copy with GitHub CLI when the user
+approves, or use the local-only fallback. Never push personalized memory to the public
+starter.
+
+## GitHub CLI Is Not Authenticated
+
+Pause for `gh auth login`, ask the user to use GitHub's template button, or continue
+locally after renaming the public starter remote to `starter`.
+
 ## Wrong Working Directory
 
 Run `pwd` and confirm you are at the repository root before letting an agent edit files.

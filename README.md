@@ -5,7 +5,36 @@ A Hermes-friendly, files-first workspace that keeps useful context across fresh 
 The workspace belongs to you, not to one model or app. Hermes, Codex, Claude Code, and
 other file-aware agents can all use the same durable Markdown files.
 
-## Start With Hermes
+## One-Prompt Setup
+
+Install Hermes, open an empty working directory, run `hermes`, and paste:
+
+```text
+Set up my AI memory workspace from this repository:
+https://github.com/Fryingpannn/ai-memory-workspace-starter
+
+Start with prompts/START-HERE.md and follow the complete setup workflow.
+Ask only the questions you cannot answer safely. Do not move, symlink, or modify
+my existing projects without approval.
+```
+
+The agent will:
+
+1. Inspect the repository link.
+2. Ask where the workspace should live.
+3. Create a private GitHub copy or offer local-only setup.
+4. Clone and validate the workspace.
+5. Detect the user's project layout.
+6. Connect approved projects read-only.
+7. Personalize the workspace and memory.
+8. Stop for review before commit or push.
+9. Prepare the fresh-session verification.
+
+GitHub CLI must be authenticated for automatic private-repository creation. Otherwise
+the agent will pause for login, ask the user to use the template button, or continue
+locally without pushing.
+
+## Manual Setup Alternative
 
 1. Complete the [official Hermes quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart/) and run `hermes setup`.
 2. Use this repository as a GitHub template to create your own private repository.
@@ -13,7 +42,7 @@ other file-aware agents can all use the same durable Markdown files.
 4. Run `hermes`.
 5. Tell Hermes:
 
-   `Set up this workspace. I may already have projects. Detect my layout, ask only the questions you need, and do not move or link anything without my approval.`
+   `Read prompts/START-HERE.md and set up this workspace.`
 
 6. Inspect every changed file.
 7. Create the first local Git checkpoint, then push to your private GitHub repository.
@@ -84,7 +113,10 @@ This sidecar layout works without moving projects or relying on symlinks.
 ├── docs/                      operating references
 ├── skills/                    reusable procedures
 ├── outputs/                   reviewable deliverables
-└── prompts/                   setup and verification prompts
+└── prompts/
+    ├── START-HERE.md          one-prompt bootstrap
+    ├── HERMES-SETUP.md        staged setup router
+    └── setup/                 short setup stages
 ```
 
 ## Memory Model

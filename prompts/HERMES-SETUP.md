@@ -1,7 +1,7 @@
 # Hermes Workspace Setup Router
 
-Use this after cloning your private copy of the starter and starting Hermes from its
-root folder.
+Use this after `prompts/START-HERE.md` has created or opened the user's private
+workspace clone.
 
 The user can say:
 

@@ -3,8 +3,10 @@
 ## Setup Routing
 
 - If the user says "set up this project", "set up this workspace", or similar while
-  starter placeholders remain, read `prompts/HERMES-SETUP.md`.
-- Follow its staged setup prompts in order.
+  starter placeholders remain, read `prompts/START-HERE.md`.
+- If the workspace is already cloned and validated, continue to
+  `prompts/HERMES-SETUP.md`.
+- Follow the bootstrap and staged setup prompts in order.
 - Do not move, copy, symlink, or edit existing projects during setup without approval.
 
 ## Purpose
