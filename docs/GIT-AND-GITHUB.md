@@ -9,6 +9,9 @@
 
 Review paths explicitly. Do not use `git add .` blindly.
 
+`projects/local-paths.md` is intentionally ignored. Each machine keeps its own project
+locations while Git tracks stable project IDs and profiles.
+
 ## GitHub Is the Optional Remote Copy
 
 GitHub is useful for backup, collaboration, and machine synchronization. Keep a
@@ -25,4 +28,3 @@ git push
 ```
 
 Never show or commit authentication tokens.
-

@@ -13,7 +13,7 @@ other file-aware agents can all use the same durable Markdown files.
 4. Run `hermes`.
 5. Tell Hermes:
 
-   `Read prompts/HERMES-SETUP.md and personalize this workspace for me.`
+   `Set up this workspace. I may already have projects. Detect my layout, ask only the questions you need, and do not move or link anything without my approval.`
 
 6. Inspect every changed file.
 7. Create the first local Git checkpoint, then push to your private GitHub repository.
@@ -21,6 +21,48 @@ other file-aware agents can all use the same durable Markdown files.
 
 Hermes does not own the resulting memory. It helps create and maintain ordinary files
 inside your Git repository.
+
+## Existing Projects
+
+You do not need to move existing repositories into this starter.
+
+The setup flow detects whether you have:
+
+- one existing project;
+- an outer folder containing several projects;
+- an outer folder that is itself a Git repository;
+- projects scattered across different locations;
+- a mix of new and existing work.
+
+By default, existing projects stay where they are. Hermes creates:
+
+- a tracked project registry;
+- one tracked profile per connected project;
+- a gitignored local path map for this machine;
+- sourced memory from selected high-signal documentation.
+
+Symlinks are not used by default because they are less portable across Windows, macOS,
+Git, and multiple machines. Physical reorganization is an optional reviewed migration.
+
+Initial setup connects at most three projects and reads only approved documentation.
+It does not broadly ingest source code or edit connected repositories.
+
+### Recommended Universal Layout
+
+If the existing outer folder is not a Git repository, place the memory workspace beside
+the project repositories inside it:
+
+```text
+My-Work/
+├── memory-workspace/
+├── client-portal/
+└── automations/
+```
+
+If the existing outer folder is already a Git repository, place the memory workspace
+beside that outer repository instead of nesting another tracked repository inside it.
+
+This sidecar layout works without moving projects or relying on symlinks.
 
 ## Workspace Map
 
@@ -35,7 +77,10 @@ inside your Git repository.
 │   ├── log.md                 durable change history
 │   ├── pages/                 durable facts and decisions
 │   └── raw/                   auditable source records
-├── projects/                  active work
+├── projects/
+│   ├── index.md               tracked project registry
+│   ├── <project-id>.md        tracked project profile
+│   └── local-paths.md         gitignored machine-local paths
 ├── docs/                      operating references
 ├── skills/                    reusable procedures
 ├── outputs/                   reviewable deliverables
@@ -48,7 +93,8 @@ inside your Git repository.
 - `memory/YYYY-MM-DD.md` holds recent working context.
 - `wiki/pages/` holds durable facts and decisions.
 - `wiki/raw/` preserves source records and provenance.
-- `projects/` holds current project state.
+- Connected project files hold current project state.
+- `projects/` holds project discovery profiles and local path routing.
 - `outputs/` holds deliverables, not memory.
 
 Vector search, RAG, databases, knowledge graphs, and automations are intentionally
@@ -59,7 +105,7 @@ excluded from this beginner starter.
 The workspace is ready when a fresh session can:
 
 1. Explain what the workspace is for.
-2. Identify the important project and people or roles.
+2. Identify important projects and people or roles.
 3. Follow the operating rules in `AGENTS.md`.
 4. Retrieve one durable decision and name its source file.
 5. Write one new dated memory to the correct file.

@@ -1,46 +1,63 @@
-# Hermes Workspace Setup Prompt
+# Hermes Workspace Setup Router
 
-Use this after cloning your copy of the starter repository and starting Hermes from its
+Use this after cloning your private copy of the starter and starting Hermes from its
 root folder.
 
+The user can say:
+
 ```text
-Personalize this files-first AI memory workspace for me.
-
-Before editing:
-1. Print the current working directory.
-2. Confirm it is the Git repository root containing README.md and AGENTS.md.
-3. List the files you plan to change.
-4. Stop if the directory is wrong, a target file is missing, or an edit would destroy
-   existing work.
-
-Ask me only for information that is still missing:
-- Owner or team
-- Areas of work
-- Important outputs
-- Important person or role
-- Active project
-- One safe durable fact
-- One real project decision
-- Why that decision was made
-- A source or provenance note
-
-Then:
-1. Replace the bracketed placeholders in AGENTS.md.
-2. Update README.md with my workspace purpose and active project.
-3. Record the safe durable fact in wiki/pages/workspace-profile.md.
-4. Record the real decision, rationale, date, and provenance in
-   wiki/pages/decisions.md.
-5. Link both pages from wiki/index.md.
-6. Add a dated setup entry to wiki/log.md.
-7. Leave CLAUDE.md as the short bridge to AGENTS.md.
-8. Do not add databases, vector search, RAG, automations, nested repositories, or
-   submodules.
-9. Do not stage, commit, create a remote, push, publish, or expose secrets.
-
-When finished:
-1. Show the files changed.
-2. Explain the read route and write-back route in five lines or fewer.
-3. Show git status.
-4. Stop for my review.
+Set up this workspace. I may already have projects. Detect my layout, ask only the
+questions you need, and do not move or link anything without my approval.
 ```
 
+## Setup Goal
+
+Create a files-first memory workspace that can understand new or existing projects
+without forcing the user to reorganize them.
+
+## Non-Negotiable Defaults
+
+- Do not move, copy, rename, symlink, delete, or rewrite an existing project.
+- Do not add nested repositories, submodules, databases, vector search, or RAG.
+- Do not scan the home directory or unrelated folders.
+- Do not read `.env`, credentials, tokens, private keys, or secret folders.
+- Do not edit files inside a connected project during setup.
+- Do not stage, commit, push, publish, or create remotes.
+- Prefer a project registry plus a local path map over symlinks.
+- Ask before any action that changes existing work.
+
+## Routed Workflow
+
+Follow these files in order. Read only one stage at a time.
+
+1. Read `prompts/setup/01-DISCOVER.md`.
+2. Show the detected scenario and recommended setup mode.
+3. Wait for the user to confirm the mode and project scope.
+4. If existing projects will be connected, read
+   `prompts/setup/02-CONNECT-PROJECTS.md`.
+5. Read `prompts/setup/03-PERSONALIZE-MEMORY.md`.
+6. Run `prompts/VERIFY-WORKSPACE.md`.
+7. Show changed files and `git status`, then stop for review.
+
+Read `prompts/setup/04-OPTIONAL-REORGANIZE.md` only when the user explicitly asks
+to move, copy, symlink, nest, or consolidate repositories.
+
+## Supported Scenarios
+
+- New workspace with no existing projects.
+- One existing project repository.
+- Existing outer folder containing several project folders.
+- Existing outer folder that is itself a Git repository.
+- Projects scattered across different folders or drives.
+- Mixed setup with both new and existing projects.
+
+## Success Condition
+
+The finished workspace must know:
+
+- what projects exist;
+- where each project is located on this machine;
+- which files are authoritative for each project;
+- what durable facts and decisions are confirmed;
+- when to read recent memory versus the wiki;
+- how to verify the setup from a fresh session.
