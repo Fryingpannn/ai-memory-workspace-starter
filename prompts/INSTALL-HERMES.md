@@ -87,8 +87,7 @@ In the first-run setup:
    - from Codex, use OpenAI Codex with ChatGPT OAuth;
    - from Claude, use Anthropic OAuth only for Claude Max with extra usage enabled;
    - if neither works, pause and ask the user to sign in to one of those options.
-3. Use the matching subscription through `hermes model`. Never select, test, or
-   authenticate Bedrock, even if auto-detected. Do not fall back to another provider.
+3. Use the matching subscription through `hermes model`.
 4. Keep the local terminal backend unless the user explicitly requests isolation.
 5. Enable File Operations, Terminal, browser, memory, session search,
    skills, and cron for the Hermes CLI.

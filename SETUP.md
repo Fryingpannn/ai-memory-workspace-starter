@@ -23,8 +23,7 @@ existing projects, personalize the memory routes, and stop for review before sav
 - Ask only questions the current stage cannot answer safely.
 - Ask before downloading or running an installer.
 - Ask before provider authentication or other account access.
-- Use an existing Codex/ChatGPT or supported Claude subscription for Hermes; never use
-  AWS Bedrock.
+- Use an existing Codex/ChatGPT or supported Claude subscription for Hermes.
 - Use local Google Chrome for browser tasks. Do not add a separate web-search provider.
 - Never personalize the public starter repository.
 - Never overwrite a non-empty destination.
