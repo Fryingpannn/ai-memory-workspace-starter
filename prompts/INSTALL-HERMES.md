@@ -47,7 +47,8 @@ Get-Command hermes -ErrorAction SilentlyContinue
 hermes --version
 ```
 
-If Hermes works, skip installation and continue to the handoff.
+If Hermes works, skip only Step 2. Continue with Step 3 so the required capabilities
+are inspected, configured, and verified before the handoff.
 
 ## Step 2: Install the Official CLI
 
