@@ -51,9 +51,12 @@ and be connected later.
 
 ### SINGLE
 
-If memory is only for this project, recommend installing the workspace files into that
-repository root. If memory will span multiple projects, keep this starter as a sidecar
-workspace and connect the repository by path.
+Keep this starter as a sidecar workspace during initial setup and connect the project
+by path.
+
+If the user explicitly wants the project repository to own the memory files, treat
+that as a separate reviewed migration after initial setup. Do not merge workspace files
+into the project during discovery or connection.
 
 ### OUTER_PLAIN
 

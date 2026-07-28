@@ -67,7 +67,7 @@ Populate only confirmed information:
 
 - project name and stable ID;
 - purpose;
-- lifecycle status;
+- lifecycle status, only when explicitly labeled by a source or confirmed by the user;
 - repository remote, if present;
 - authoritative files;
 - confirmed run or test commands;
@@ -77,6 +77,10 @@ Populate only confirmed information:
 - open questions.
 
 Write `Unknown` rather than guessing.
+
+Do not infer lifecycle status from loose wording such as "maintained," "current,"
+"legacy," or "in development." Those phrases may describe the work without defining
+its status.
 
 Do not put machine-specific absolute paths in the tracked project profile.
 
