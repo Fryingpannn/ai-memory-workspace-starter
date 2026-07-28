@@ -2,13 +2,8 @@
 
 ## Setup Routing
 
-- If the user asks to install Hermes and the `hermes` command is unavailable, read
-  `prompts/INSTALL-HERMES.md` and stop at its Hermes handoff.
-- If the user says "set up this project", "set up this workspace", or similar while
-  starter placeholders remain, read `prompts/START-HERE.md`.
-- If the workspace is already cloned and validated, continue to
-  `prompts/HERMES-SETUP.md`.
-- Follow the bootstrap and staged setup prompts in order.
+- For any installation or workspace-setup request, read `SETUP.md`.
+- Follow only the next stage routed by the setup index.
 - Do not move, copy, or edit existing projects during setup without approval.
 
 ## Purpose

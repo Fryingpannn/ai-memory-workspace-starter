@@ -136,9 +136,8 @@ Stop the installing agent. Open an empty working directory, start `hermes`, and 
 Set up my AI memory workspace from this repository:
 https://github.com/Fryingpannn/ai-memory-workspace-starter
 
-Start with prompts/START-HERE.md and follow the complete setup workflow.
-Ask only the questions you cannot answer safely. Do not move or modify my existing
-projects without approval.
+Start with SETUP.md and follow the setup index.
 ```
 
-The Hermes session should now follow `prompts/START-HERE.md`.
+The Hermes session should now read `SETUP.md`, recognize that Hermes is ready, and
+continue to `prompts/START-HERE.md`.

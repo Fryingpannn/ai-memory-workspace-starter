@@ -1,15 +1,12 @@
 # One-Prompt Workspace Bootstrap
 
-This is the entry point when the user provides a repository URL or says
-"set up this repository."
+This is the repository-bootstrap stage routed by `SETUP.md`.
 
 This file may be read from GitHub before the repository exists locally.
 
 ## Precondition
 
-If this file is being read by another agent and the `hermes` command is unavailable,
-follow `prompts/INSTALL-HERMES.md` first and stop at its handoff. Resume this file from
-a real Hermes session.
+If the current agent is not Hermes, return to `SETUP.md` and follow Route 1.
 
 ## Goal
 
@@ -26,9 +23,7 @@ Recommended message:
 Set up my AI memory workspace from this repository:
 [REPOSITORY URL]
 
-Start with prompts/START-HERE.md and follow the complete setup workflow.
-Ask only the questions you cannot answer safely. Do not move or modify my existing
-projects without approval.
+Start with SETUP.md and follow the setup index.
 ```
 
 ## Safety Rules

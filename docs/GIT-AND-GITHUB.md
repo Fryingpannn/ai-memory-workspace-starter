@@ -21,7 +21,7 @@ After reviewing the starter:
 
 ```bash
 git status
-git add README.md AGENTS.md CLAUDE.md memory wiki projects docs skills outputs prompts
+git add SETUP.md README.md AGENTS.md CLAUDE.md memory wiki projects docs skills outputs prompts
 git diff --cached
 git commit -m "Personalize AI memory workspace"
 git push

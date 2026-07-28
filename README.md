@@ -5,61 +5,37 @@ A Hermes-friendly, files-first workspace that keeps useful context across fresh 
 The workspace belongs to you, not to one model or app. Hermes, Codex, Claude Code, and
 other file-aware agents can all use the same durable Markdown files.
 
-## Start From Zero
+## One Setup Prompt
 
-If Hermes is not installed, open Claude, Codex, or another agent with terminal access
-and paste:
-
-```text
-Install and configure Hermes for me from this repository:
-https://github.com/Fryingpannn/ai-memory-workspace-starter
-
-Start with prompts/INSTALL-HERMES.md and follow it completely.
-Enable file and terminal tools, browser and web tools, built-in memory capture,
-session search, skills, and cron. Skip messaging and other external integrations.
-Ask before running the installer or starting provider authentication.
-Stop at the Hermes handoff and give me the exact next prompt.
-```
-
-That agent will:
-
-1. Inspect the current official Hermes installation instructions.
-2. Ask permission before running the official installer.
-3. Choose `Full Setup`.
-4. Configure one model provider.
-5. Enable browser, memory capture, session search, skills, cron, file, and terminal.
-6. Skip messaging gateways and unrelated external integrations.
-7. Verify the local Hermes capabilities.
-8. Return the workspace handoff prompt.
-
-The user does not need to install Hermes manually when the existing agent has terminal
-access and permission to run the installer.
-
-## One-Prompt Setup
-
-After the installing agent returns the handoff, open an empty working directory, run
-`hermes`, and paste:
+Paste this into Claude, Codex, or Hermes:
 
 ```text
 Set up my AI memory workspace from this repository:
 https://github.com/Fryingpannn/ai-memory-workspace-starter
 
-Start with prompts/START-HERE.md and follow the complete setup workflow.
-Ask only the questions you cannot answer safely. Do not move or modify my existing
-projects without approval.
+Start with SETUP.md and follow the setup index.
 ```
 
-The agent will:
+`SETUP.md` determines what comes next:
 
-1. Inspect the repository link.
-2. Ask where the workspace should live.
-3. Create a private GitHub copy or offer local-only setup.
-4. Clone and validate the workspace.
-5. Detect the user's project layout.
-6. Connect approved projects read-only.
-7. Personalize the workspace and memory.
-8. Stop for review before commit or push.
-9. Prepare the fresh-session verification.
+1. If Claude or Codex is running, it prepares and verifies Hermes.
+2. It stops and hands the same short prompt to a real Hermes session.
+3. Hermes creates or opens the memory workspace.
+4. Hermes discovers approved projects and personalizes memory.
+5. The workflow stops for review and a fresh-session proof.
+
+The user does not need to name or understand the internal setup files.
+
+## Hermes Handoff
+
+When Claude or Codex reaches `HERMES_HANDOFF`, open an empty working directory and run:
+
+```text
+hermes
+```
+
+Paste the exact same short setup prompt again. `SETUP.md` now routes Hermes directly to
+the repository bootstrap.
 
 GitHub CLI must be authenticated for automatic private-repository creation. Otherwise
 the agent will pause for login, ask the user to use the template button, or continue
@@ -67,13 +43,13 @@ locally with pushes to the public starter disabled.
 
 ## Manual Setup Alternative
 
-1. Complete `prompts/INSTALL-HERMES.md` or the [official Hermes quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart/).
+1. Read `SETUP.md`.
 2. Use this repository as a GitHub template to create your own private repository.
 3. Clone your new repository and open its folder in a terminal.
 4. Run `hermes`.
 5. Tell Hermes:
 
-   `Read prompts/START-HERE.md and set up this workspace.`
+   `Read SETUP.md and continue the setup.`
 
 6. Inspect every changed file.
 7. Create the first local Git checkpoint, then push to your private GitHub repository.
@@ -125,6 +101,7 @@ This sidecar layout works without moving existing projects.
 
 ```text
 .
+├── SETUP.md                   single setup index
 ├── AGENTS.md                  canonical operating instructions
 ├── CLAUDE.md                  Claude Code compatibility bridge
 ├── memory/                    recent dated working context

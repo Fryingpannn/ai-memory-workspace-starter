@@ -2,9 +2,9 @@
 
 ## The User Only Has the Public Repository Link
 
-Read `prompts/START-HERE.md`. Create a private copy with GitHub CLI when the user
-approves, or use the local-only fallback. Never push personalized memory to the public
-starter.
+Read `SETUP.md`. It will route Hermes to `prompts/START-HERE.md`, which creates a
+private copy with GitHub CLI when the user approves or uses the local-only fallback.
+Never push personalized memory to the public starter.
 
 ## GitHub CLI Is Not Authenticated
 
