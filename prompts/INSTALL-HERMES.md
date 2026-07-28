@@ -1,15 +1,22 @@
-# Minimal Hermes Installation
+# Hermes Installation and Full Local Setup
 
-Use this only when `hermes` is not already installed.
+Use this when Claude, Codex, or another existing agent is preparing Hermes for the user.
 
 ## Goal
 
-Install the official Hermes CLI, configure one model provider, keep only the file and
-terminal tools needed for workspace setup, verify one working chat, and hand control to
-Hermes.
+Install the official Hermes CLI, configure one model provider, enable the useful local
+agent capabilities, verify them, and hand control to Hermes.
 
-Do not configure messaging, gateways, browser automation, web tools, voice, TTS, image
-generation, cron, skills, plugins, MCP servers, or other integrations.
+The required setup includes:
+
+- File Operations and Terminal;
+- web search and browser automation;
+- built-in memory capture and session search;
+- skills and skill management;
+- cron and scheduled-task management.
+
+Messaging platforms, external memory providers, MCP servers, voice, smart-home tools,
+and other account integrations are outside this tutorial.
 
 ## Safety Rules
 
@@ -50,7 +57,7 @@ the detected platform.
 Current macOS, Linux, and WSL shape:
 
 ```text
-curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash -s -- --skip-browser
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
 ```
 
 Current Windows PowerShell shape:
@@ -69,20 +76,31 @@ hermes --version
 hermes doctor
 ```
 
-## Step 3: Choose Minimal Setup
+## Step 3: Choose Full Setup
 
 In the first-run setup:
 
-1. Choose `Blank Slate`, not the integration-focused quick setup.
+1. Choose `Full Setup`.
 2. Configure one model provider and one supported model.
-3. Keep the File Operations and Terminal toolsets enabled.
-4. Leave every optional integration and advanced tool disabled.
-5. Keep the local terminal backend unless the user explicitly requests isolation.
+3. Keep the local terminal backend unless the user explicitly requests isolation.
+4. Enable File Operations, Terminal, web/search, browser, memory, session search,
+   skills, and cron for the Hermes CLI.
+5. Enable built-in memory capture and user-profile memory.
+6. Install the local browser runtime when offered.
+7. Skip messaging gateways, external memory providers, MCP servers, voice, and other
+   account integrations.
 
-The model provider is required for Hermes to respond. It is the only account or
-credential setup required in this tutorial.
+Use `hermes tools` after setup to confirm the CLI toolsets. Do not manually edit global
+Hermes configuration when the setup interface can make the change safely.
 
-## Step 4: Verify One Chat
+## Step 4: Verify the Full Local Agent
+
+Run:
+
+```text
+hermes tools
+hermes cron status
+```
 
 Start Hermes:
 
@@ -90,13 +108,24 @@ Start Hermes:
 hermes
 ```
 
-Ask:
+Ask Hermes:
 
 ```text
-Tell me the current working directory and list only its immediate files.
+Tell me the current working directory, list only its immediate files, and confirm
+whether browser, memory, session search, skills, and cron tools are available.
 ```
 
-The install passes when Hermes responds and can use local file and terminal tools.
+The install passes when:
+
+- Hermes responds with the configured model;
+- file and terminal access work;
+- browser tools are available;
+- memory and session search are available;
+- skill tools are available;
+- cron status can be read.
+
+Do not create a real scheduled job, write a test memory, or install a skill merely to
+prove availability.
 
 ## Step 5: Hand Off to the Workspace Setup
 

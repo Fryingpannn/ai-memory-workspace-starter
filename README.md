@@ -7,27 +7,38 @@ other file-aware agents can all use the same durable Markdown files.
 
 ## Start From Zero
 
-If Hermes is not installed, follow
-[`prompts/INSTALL-HERMES.md`](prompts/INSTALL-HERMES.md).
+If Hermes is not installed, open Claude, Codex, or another agent with terminal access
+and paste:
 
-The minimal tutorial setup is:
+```text
+Install and configure Hermes for me from this repository:
+https://github.com/Fryingpannn/ai-memory-workspace-starter
 
-1. Install the official Hermes CLI.
-2. Choose `Blank Slate` during first-run setup.
-3. Configure one model provider.
-4. Keep only File Operations and Terminal enabled.
-5. Skip gateways, messaging, browser, web, voice, media, automation, plugins, and MCP.
-6. Verify one normal Hermes chat.
-7. Continue with the repository prompt below.
+Start with prompts/INSTALL-HERMES.md and follow it completely.
+Enable file and terminal tools, browser and web tools, built-in memory capture,
+session search, skills, and cron. Skip messaging and other external integrations.
+Ask before running the installer or starting provider authentication.
+Stop at the Hermes handoff and give me the exact next prompt.
+```
 
-Hermes cannot install itself before it exists. The installation command must be run
-manually or by an already-installed agent such as Codex or Claude. After installation,
-start a real Hermes session for the workspace setup.
+That agent will:
+
+1. Inspect the current official Hermes installation instructions.
+2. Ask permission before running the official installer.
+3. Choose `Full Setup`.
+4. Configure one model provider.
+5. Enable browser, memory capture, session search, skills, cron, file, and terminal.
+6. Skip messaging gateways and unrelated external integrations.
+7. Verify the local Hermes capabilities.
+8. Return the workspace handoff prompt.
+
+The user does not need to install Hermes manually when the existing agent has terminal
+access and permission to run the installer.
 
 ## One-Prompt Setup
 
-After the minimal installation, open an empty working directory, run `hermes`, and
-paste:
+After the installing agent returns the handoff, open an empty working directory, run
+`hermes`, and paste:
 
 ```text
 Set up my AI memory workspace from this repository:
@@ -131,7 +142,7 @@ This sidecar layout works without moving existing projects.
 ├── skills/                    reusable procedures
 ├── outputs/                   reviewable deliverables
 └── prompts/
-    ├── INSTALL-HERMES.md      minimal CLI prerequisite
+    ├── INSTALL-HERMES.md      full local Hermes prerequisite
     ├── START-HERE.md          one-prompt bootstrap
     ├── HERMES-SETUP.md        staged setup router
     └── setup/                 short setup stages
