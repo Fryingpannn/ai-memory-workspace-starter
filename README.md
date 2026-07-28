@@ -32,7 +32,7 @@ The agent will:
 
 GitHub CLI must be authenticated for automatic private-repository creation. Otherwise
 the agent will pause for login, ask the user to use the template button, or continue
-locally without pushing.
+locally with pushes to the public starter disabled.
 
 ## Manual Setup Alternative
 

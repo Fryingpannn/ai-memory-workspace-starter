@@ -9,7 +9,8 @@ starter.
 ## GitHub CLI Is Not Authenticated
 
 Pause for `gh auth login`, ask the user to use GitHub's template button, or continue
-locally after renaming the public starter remote to `starter`.
+locally after renaming the public starter remote to `starter` and disabling its push
+URL as directed by `prompts/START-HERE.md`.
 
 ## Wrong Working Directory
 

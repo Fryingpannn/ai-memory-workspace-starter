@@ -58,9 +58,12 @@ Do not clone until the classification and destination are clear.
 
 Ask only what cannot be determined:
 
-1. What should the private workspace repository be named?
-2. Where should it be cloned locally?
-3. May a private GitHub repository be created if needed?
+1. Where should the workspace be cloned locally?
+2. May setup create a private GitHub repository named `ai-memory-workspace`, or should
+   this remain local-only?
+
+Do not ask for a repository name during local-only setup. Ask for a different private
+repository name only when the recommended name conflicts or the user rejects it.
 
 Recommend:
 
@@ -113,8 +116,15 @@ For local-only setup:
 
 1. Clone the public starter to the approved empty destination.
 2. Rename remote `origin` to `starter`.
-3. Do not create another remote or push.
-4. Explain that the workspace is not backed up until a private remote is added.
+3. Disable pushes to the public starter:
+
+   ```text
+   git remote set-url --push starter disabled://public-starter
+   ```
+
+4. Confirm the `starter` fetch URL is public and its push URL is disabled.
+5. Do not create another remote or push.
+6. Explain that the workspace is not backed up until a private remote is added.
 
 ### UNKNOWN
 
@@ -125,7 +135,7 @@ Stop and explain exactly what could not be determined.
 Inside the workspace root:
 
 1. Print the working directory.
-2. Show the repository remotes and visibility destination.
+2. Show the repository fetch and push URLs and visibility destination.
 3. Confirm the root contains the required starter files.
 4. Confirm personalized memory will not be pushed to the public starter.
 5. Read `AGENTS.md`.

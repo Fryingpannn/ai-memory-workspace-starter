@@ -14,7 +14,13 @@ Stop if this is not the starter workspace root.
 
 ## Ask Only What Discovery Cannot Answer
 
-Ask these questions together:
+First ask:
+
+1. Do you have any existing projects to connect now?
+
+If no, classify the scenario as `NEW` and skip all existing-project questions.
+
+If yes, ask these questions together:
 
 1. Is this memory workspace for one project or multiple projects?
 2. Do the existing projects already share an outer folder, or are they scattered?
