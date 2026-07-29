@@ -1,6 +1,7 @@
 # User Profile
 
-Keep this profile short, durable, and limited to information the user confirmed.
+Keep this file under 100 lines. Consolidate or replace outdated entries instead of
+appending indefinitely. Keep only durable, user-confirmed information.
 
 ## Identity
 

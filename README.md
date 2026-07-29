@@ -3,8 +3,8 @@
 An agent-run installer for adding portable, files-first memory to a new or existing
 outer workspace.
 
-This repository is not the user's workspace. Codex, Claude, or another file-aware agent
-reads `SETUP.md`, temporarily downloads this package when needed, and installs only the
+This repository is not the user's workspace. The user's existing file-aware agent reads
+`SETUP.md`, temporarily downloads this package when needed, and installs only the
 missing scaffold files from `templates/workspace/`.
 
 ## One Setup Prompt
@@ -27,39 +27,38 @@ or creates one after approval. Existing projects stay in place.
 - `SETUP.md`: the only setup entrypoint.
 - `prompts/setup/`: short, ordered setup stages.
 - `prompts/VERIFY-WORKSPACE.md`: fresh-session acceptance test.
+- `prompts/CONNECT-INNER-PROJECTS.md`: optional reviewed bridge for child-project
+  instruction files.
 - `templates/workspace/`: missing-only files for the user's outer workspace.
 - `docs/`: reference material for the setup agent and implementing user.
 
-The temporary clone is removed after verification. Its Git history and remote are never
-copied into the user's workspace.
+The temporary clone is removed after verification and the final handoff. Its Git history
+and remote are never copied into the user's workspace.
 
 ## Setup Flow
 
 1. Confirm or create the outer workspace.
-2. Install and configure Hermes, then register that outer folder.
-3. Copy only missing supporting files from `templates/workspace/`, reserving a missing
-   root `AGENTS.md` for Hermes.
-4. Run one supervised Hermes session for profile onboarding and native `/init`.
-5. Return to the original setup manager.
-6. Build the portable root `USER.md` and interlinked `wiki/`.
-7. Analyze approved existing child projects read-only.
-8. Add shared memory routing to canonical `AGENTS.md`.
-9. Review or initialize the outer Git repository.
-10. Prove retrieval from a fresh session, then remove the temporary setup clone.
+2. Copy only missing supporting files from `templates/workspace/`.
+3. Build the portable root `USER.md`.
+4. Build the interlinked `wiki/`.
+5. Analyze approved existing child projects read-only.
+6. Create or review a fused canonical `AGENTS.md`.
+7. Review or initialize the outer Git repository.
+8. Prove retrieval from a fresh session.
+9. Deliver the optional inner-project bridge prompt, then remove the temporary setup
+   clone.
 
 ## Ownership Boundaries
-
-Hermes natively owns:
-
-- user-level configuration and `SOUL.md`;
-- consent-gated Hermes profile memory;
-- root `AGENTS.md` creation or merge-update through `/init`.
 
 The portable workspace owns:
 
 - root `USER.md`;
 - the `CLAUDE.md` compatibility bridge;
-- `memory/`, `projects/`, `skills/`, `outputs/`, and `wiki/`.
+- `projects/`, `skills/`, `outputs/`, and `wiki/`.
 
-Existing target files are preserved. Software installation, authentication, Git
-initialization, commits, remote creation, and pushes remain approval-gated.
+Existing target files are preserved except for a user-confirmed replacement of
+`AGENTS.md` with its reviewed fused proposal. Git initialization, commits, remote
+creation, and pushes remain approval-gated.
+
+This installer uses the file-aware agent the user already has. Installing another
+harness is a separate optional workflow.

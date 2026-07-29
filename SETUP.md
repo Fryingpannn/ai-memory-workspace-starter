@@ -2,8 +2,8 @@
 
 This is the only setup entrypoint the user needs.
 
-Read one stage at a time. Keep the current Codex, Claude, or other file-aware agent as
-the manager for the entire setup.
+Read one stage at a time. Keep the user's current file-aware agent as the manager for
+the entire setup.
 
 ## User Prompt
 
@@ -26,15 +26,14 @@ the user's personalized workspace.
 ## Global Rules
 
 - Ask only questions the current stage cannot answer safely.
-- Keep the current Codex, Claude, or other agent as setup manager. Run only the
-  supervised Hermes onboarding and `/init` stage inside Hermes, then return.
-- Never replace existing content. Use only reviewed, targeted edits.
+- Keep the user's current agent as setup manager for the entire workflow.
+- Never replace existing content except the explicitly reviewed `AGENTS.md` fusion in
+  Stage 6. Use only reviewed, targeted edits.
 - Never move or edit an existing project during setup.
 - Never read secrets, generated dependencies, or broad source trees.
 - Show proposed changes before editing an existing `USER.md`, `AGENTS.md`, or
   `CLAUDE.md`.
-- Ask before installing software, authenticating an account, initializing Git,
-  committing, creating a remote, or pushing.
+- Ask before initializing Git, committing, creating a remote, or pushing.
 - Do not support scattered projects in the guided setup. They can be connected later.
 - Read only the next routed prompt.
 
@@ -62,15 +61,14 @@ If prior contents are uncertain, stop and ask instead of moving anything.
 Follow these prompts in order:
 
 1. `prompts/setup/01-CHOOSE-WORKSPACE.md`
-2. `prompts/setup/02-INSTALL-HERMES.md`
-3. `prompts/setup/03-SCAFFOLD-WORKSPACE.md`
-4. `prompts/setup/04-INITIALIZE-WITH-HERMES.md`
-5. `prompts/setup/05-ONBOARD-USER.md`
-6. `prompts/setup/06-BUILD-WIKI.md`
-7. `prompts/setup/07-ANALYZE-PROJECTS.md`, only when projects already exist
-8. `prompts/setup/08-LINK-MEMORY.md`
-9. `prompts/setup/09-INITIALIZE-GIT.md`
-10. `prompts/VERIFY-WORKSPACE.md`
+2. `prompts/setup/02-SCAFFOLD-WORKSPACE.md`
+3. `prompts/setup/03-ONBOARD-USER.md`
+4. `prompts/setup/04-BUILD-WIKI.md`
+5. `prompts/setup/05-ANALYZE-PROJECTS.md`, only when projects already exist
+6. `prompts/setup/06-FINALIZE-AGENTS.md`
+7. `prompts/setup/07-INITIALIZE-GIT.md`
+8. `prompts/VERIFY-WORKSPACE.md`
+9. `prompts/CONNECT-INNER-PROJECTS.md`
 
 The manager owns user questions and approval gates. Spawn clean-context subagents only
 where a stage explicitly requests them. If subagents are unavailable, execute that
@@ -84,13 +82,10 @@ root for every remaining stage. Continue reading routed prompts from the staging
 Setup is complete when:
 
 - one outer workspace root is confirmed;
-- Hermes is installed and its required local capabilities are verified;
-- Hermes points to the confirmed outer folder as its active project and terminal
-  working directory;
 - missing skeleton files exist without replacing prior work;
-- Hermes `/init` created or merge-updated the canonical root `AGENTS.md`, a pre-existing
-  file was explicitly preserved, or a documented fallback was used;
-- Hermes onboarding completed or was explicitly declined;
+- a missing `AGENTS.md` was created from the template, or an existing file was replaced
+  only after the user approved a complete fused proposal;
+- user onboarding completed or was explicitly declined;
 - a reviewed root `USER.md` exists or onboarding was explicitly declined;
 - `wiki/` has an index, schema, log, raw-source area, and interlinked pages;
 - approved existing projects have sourced wiki entries;
@@ -100,4 +95,10 @@ Setup is complete when:
 - the user has reviewed all changes;
 - a fresh session can retrieve user context and sourced knowledge through `USER.md` and
   `wiki/index.md`;
-- the agent-created temporary setup clone was removed after verification.
+- the optional inner-project memory-bridge prompt was delivered without editing child
+  projects;
+- the agent-created temporary setup clone was removed after verification and the final
+  handoff.
+
+Installing another harness is outside this setup. It can be added to the completed
+workspace later without changing the workspace structure.

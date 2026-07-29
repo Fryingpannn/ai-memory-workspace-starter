@@ -1,4 +1,4 @@
-# Stage 7: Analyze Existing Projects
+# Stage 5: Analyze Existing Projects
 
 Use only for project folders already inside the confirmed outer workspace.
 
@@ -8,8 +8,8 @@ List immediate child folders only. If the user already approved all detected pro
 during Stage 1, do not ask again. Otherwise ask which one to three project folders to
 analyze first.
 
-Exclude workspace control folders such as `wiki`, `memory`, `projects`, `prompts`,
-`docs`, `skills`, `outputs`, and `.git` from project candidates.
+Exclude workspace control folders such as `wiki`, `projects`, `prompts`, `docs`,
+`skills`, `outputs`, and `.git` from project candidates.
 
 `projects/` is the metadata registry, not a guided source-project location. Guided
 project folders are immediate children of the outer workspace root.

@@ -34,7 +34,7 @@ After reviewing the outer workspace:
 
 ```bash
 git status
-git add .gitignore README.md AGENTS.md CLAUDE.md USER.md memory wiki projects skills outputs
+git add .gitignore README.md AGENTS.md CLAUDE.md USER.md wiki projects skills outputs
 git diff --cached
 git commit -m "Personalize AI memory workspace"
 git push

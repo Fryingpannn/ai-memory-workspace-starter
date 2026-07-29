@@ -1,7 +1,7 @@
 # AI Memory Workspace
 
 This outer folder gives file-aware agents one portable place for shared instructions,
-user context, project discovery, recent notes, and durable knowledge.
+user context, project discovery, and durable knowledge.
 
 ## Start Here
 
@@ -10,10 +10,9 @@ user context, project discovery, recent notes, and durable knowledge.
 3. Read `projects/index.md` before entering a child project.
 4. Use `wiki/index.md` to find durable knowledge.
 
-## Memory Layers
+## Knowledge Layers
 
 - Current chat: temporary task context.
-- `memory/`: recent dated context that may still change.
 - `wiki/`: sourced, durable facts, decisions, and relationships.
 
 Project files remain authoritative for current project state. The wiki stores durable

@@ -1,19 +1,12 @@
-# Stage 5: Create the Portable User Profile
+# Stage 3: Create the Portable User Profile
 
-Use the confirmed answers from the supervised Hermes onboarding in Stage 4. This stage
-turns those answers into the portable root `USER.md` shared by file-aware harnesses.
-
-Hermes's profile memory and the workspace root `USER.md` are separate files. Do not
-silently synchronize them. The root file is canonical for this workspace.
+Run a short, optional questionnaire through the user's current agent. The root
+`USER.md` is the portable user profile shared across file-aware harnesses.
 
 ## Ask Once
 
-If Stage 4 already produced confirmed answers, do not ask again. Draft `USER.md` from
-those answers and show it for review.
-
-If Stage 4 onboarding was skipped or incomplete, offer a short profile and explain that
-the user may decline or answer only what they are comfortable sharing. If accepted, ask
-in one message:
+Offer the profile first. Explain that the user may decline or answer only what they are
+comfortable sharing. If accepted, ask in one message:
 
 ```text
 1. What should agents call you?
@@ -31,7 +24,7 @@ If the user declines:
 - if `USER.md` is the new starter default, replace its brackets with `NOT PROVIDED`
   rather than leaving unresolved placeholders;
 - record only that onboarding was declined, without guessing why;
-- ask only for the workspace-purpose sentence later when Stage 6 needs it.
+- ask only for the workspace-purpose sentence later when Stage 4 needs it.
 
 ## External Lookup
 
@@ -41,25 +34,23 @@ If the user wants public details confirmed:
 
 1. say exactly what you intend to check;
 2. get explicit consent for that lookup;
-3. use the user's default browser, preferring connected Google Chrome when available;
-4. do not install or use a standalone search provider;
-5. never read connected email, calendar, or other accounts without separate consent.
+3. use the user's default browser;
+4. never read connected email, calendar, or other accounts without separate consent.
 
 If browser control is unavailable, skip the lookup and ask the user to confirm the fact.
 
 ## Store the Profile
 
-Use the root `USER.md` as the canonical portable profile for this workspace.
-
-- If it is the newly scaffolded default, replace only its placeholders with confirmed
-  facts and show the result.
+- If `USER.md` is the newly scaffolded default, replace only its placeholders with
+  confirmed facts and show the result.
 - If it existed before setup, preserve it and show proposed targeted additions before
   editing.
 - Keep entries compact and high-signal.
+- Keep `USER.md` under 100 lines. Consolidate or replace outdated entries instead of
+  appending indefinitely; do not silently discard still-current confirmed information.
 - Record unknowns as `UNKNOWN`; do not infer personal facts.
 - Do not leave bracketed starter placeholders after this stage.
 - Do not create a duplicate `wiki/pages/user-profile.md`.
-- Do not write or resynchronize Hermes's user-level profile memory in this stage.
 
 `wiki/index.md` links to the root profile. Future agents discover it through
 `AGENTS.md`, regardless of harness.

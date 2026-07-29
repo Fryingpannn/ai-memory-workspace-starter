@@ -1,4 +1,4 @@
-# Stage 6: Build the Long-Term Wiki
+# Stage 4: Build the Long-Term Wiki
 
 Read the confirmed workspace purpose from the root `USER.md`. If the user declined
 onboarding and the purpose is still unknown, ask only for that one sentence.
@@ -52,7 +52,7 @@ editing it.
 - Do not add vector search, embeddings, a database, or RAG.
 
 Seed only confirmed workspace-level knowledge. Project-specific knowledge is added in
-Stage 7. Link the root `USER.md` from `wiki/index.md`; do not duplicate personal facts
+Stage 5. Link the root `USER.md` from `wiki/index.md`; do not duplicate personal facts
 in a wiki user-profile page. Replace every bracketed placeholder in
 `wiki/pages/workspace-profile.md` with the confirmed purpose, scope, and provenance.
 

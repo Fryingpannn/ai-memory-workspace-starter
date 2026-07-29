@@ -14,7 +14,8 @@ This repository is a setup package, not a personalized memory workspace.
 - Never copy its `.git/` directory or remote into the user's workspace.
 - Never treat root files as the user's memory.
 - Preserve existing target files; templates are missing-only defaults.
-- Reserve a missing target `AGENTS.md` for Hermes `/init`; use the template only as the
-  documented fallback.
+- Create a missing target `AGENTS.md` from the template.
+- For an existing target `AGENTS.md`, create a complete fused proposal and replace the
+  original only after explicit user review and confirmation.
 - Keep setup prompts concise and update every route when stages move.
 - Verify links, template paths, and a fresh remote clone before publishing changes.

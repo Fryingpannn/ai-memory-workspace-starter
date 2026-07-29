@@ -1,4 +1,4 @@
-# Stage 9: Initialize and Review Git
+# Stage 7: Initialize and Review Git
 
 The outer workspace should version the memory skeleton and wiki without absorbing
 independent project contents accidentally.
@@ -14,6 +14,8 @@ At the outer workspace root, show:
 - likely secrets or machine-local files that must remain ignored.
 
 Never change a child project's Git state.
+Before staging, treat any prospective file count as an estimate. Do not call a count
+exact until it is derived from Git after staging.
 
 ## Choose How Existing Child Repositories Connect
 
@@ -72,9 +74,9 @@ After the final Git choice, refresh each registered project profile from live Gi
 - remote URL or confirmed `NONE`;
 - remote default branch.
 
-Also recheck root `AGENTS.md` for setup-time Git claims produced before this stage.
-Replace stale claims about root Git, remotes, or child connection modes with the final
-reviewed state and show the exact diff.
+Also recheck root `AGENTS.md` for setup-time Git claims. Replace stale claims about root
+Git, remotes, or child connection modes with the final reviewed state and show the exact
+diff.
 
 Do not point an in-workspace project at `projects/local-paths.md`. That file is only for
 projects outside the outer workspace. Do not leave `UNKNOWN` when Git can answer the

@@ -1,7 +1,7 @@
-# Stage 3: Add the Workspace Skeleton
+# Stage 2: Add the Workspace Skeleton
 
-Use `templates/workspace/` inside the temporary setup clone as the only scaffold source.
-The confirmed outer folder is the target.
+Use `templates/workspace/` inside the temporary setup clone as the scaffold source. The
+confirmed outer folder is the target.
 
 Spawn one clean-context scaffold subagent when supported. Give it only:
 
@@ -17,9 +17,7 @@ Spawn one clean-context scaffold subagent when supported. Give it only:
 - Never copy repository-root installer files, prompts, docs, `.git/`, or its remote.
 - Never edit an existing project folder.
 - Preserve existing `AGENTS.md`, `CLAUDE.md`, `USER.md`, `README.md`, `.gitignore`, and
-  `wiki/`.
-- When root `AGENTS.md` is missing, reserve that path for Hermes `/init` in Stage 4.
-  Do not copy the fallback template yet.
+  `wiki/` byte-for-byte during this stage.
 - Record every collision for review.
 
 The desired root skeleton is:
@@ -30,25 +28,23 @@ AGENTS.md
 CLAUDE.md
 USER.md
 README.md
-memory/
 outputs/
 projects/
 skills/
 wiki/
 ```
 
-If `.gitignore`, `README.md`, `CLAUDE.md`, or `USER.md` is absent, add the workspace
-template default. If any exists, leave it byte-for-byte unchanged. Stage 4 creates a
-missing `AGENTS.md` through Hermes `/init`; its template is fallback-only. Stage 5
-personalizes a new `USER.md`, and Stage 8 links the Hermes harness to shared memory.
+Copy each missing file or folder from the workspace template. If root `AGENTS.md` is
+missing, copy `templates/workspace/AGENTS.md`; Stage 6 personalizes it after user and
+project context are known. If `AGENTS.md` already exists, preserve it for the reviewed
+fusion in Stage 6.
 
 When an existing directory such as `wiki/` is present, add only missing files after
 showing the exact proposed paths. Do not replace existing pages.
 
 After copying, verify that the target contains the expected supporting scaffold without
-any installer-only files. Record whether `AGENTS.md` was preserved or reserved for
-Hermes. Continue working in the target, but keep reading later prompts from the
-temporary setup clone. Keep that clone through final verification.
+any installer-only files. Continue working in the target, but keep reading later prompts
+from the temporary setup clone through final verification.
 
 ## Review
 
@@ -56,7 +52,7 @@ Return:
 
 - files created;
 - files skipped because they already existed;
-- whether `AGENTS.md` was preserved or reserved for Hermes `/init`;
+- whether `AGENTS.md` was created from the template or preserved for later fusion;
 - unresolved collisions;
 - confirmation that no installer prompt, repository metadata, or remote was copied;
 - confirmation that no existing project file changed.
