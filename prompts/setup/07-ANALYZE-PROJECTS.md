@@ -1,4 +1,4 @@
-# Stage 6: Analyze Existing Projects
+# Stage 7: Analyze Existing Projects
 
 Use only for project folders already inside the confirmed outer workspace.
 

@@ -12,14 +12,20 @@ Hermes-specific instructions to take priority over `AGENTS.md`.
 Hermes keeps its global personality file outside this repository, so this starter does
 not include a root `SOUL.md`.
 
-Hermes is installed and configured at the user level during setup. The confirmed outer
-folder is registered as a Hermes project and set as `terminal.cwd`, but Hermes does not
-create this starter's workspace files.
+Hermes contributes three native context layers during setup:
 
-The current Codex or Claude manager copies missing `AGENTS.md`, `USER.md`, wiki, and
-other skeleton files into the confirmed outer folder. These are workspace-local files.
-The user does not need to switch into a Hermes chat.
+- user-level `SOUL.md` and configuration created by Hermes setup;
+- user-profile memory populated through Hermes's consent-gated onboarding;
+- workspace-local root `AGENTS.md` created or merge-updated by Hermes `/init`.
 
-Hermes also has a user-level profile memory named `USER.md`. It is separate from the
-root workspace `USER.md`. This starter treats the root file as the portable,
-workspace-canonical profile and does not silently synchronize global Hermes memory.
+The current Codex or Claude manager first adds the supporting skeleton while reserving a
+missing `AGENTS.md`. It then supervises one Hermes session for onboarding and `/init`,
+and resumes the remaining setup afterward.
+
+When root `AGENTS.md` is missing, Hermes `/init` is intentionally its native source.
+Pre-existing files remain approval-gated, and the starter `AGENTS.md` is used only when
+native initialization is unavailable.
+
+Hermes's user-level profile memory remains separate from the root workspace `USER.md`.
+Stage 5 reuses the confirmed onboarding answers to draft the portable root file without
+asking twice. It does not silently synchronize the two files later.

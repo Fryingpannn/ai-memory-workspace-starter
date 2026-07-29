@@ -44,6 +44,6 @@ Use one concise intake question. Ask the user to confirm:
 - permission to inspect selected project documentation read-only later.
 
 When immediate child project folders are obvious, list them and ask whether all should
-be analyzed later. Save that answer so Stage 6 does not ask again.
+be analyzed later. Save that answer so Stage 7 does not ask again.
 
 Return the confirmed root path to the setup manager.

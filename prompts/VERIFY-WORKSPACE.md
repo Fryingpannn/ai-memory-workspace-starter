@@ -24,6 +24,9 @@ does not contain enough information, stop and list what is missing.
 
 The test passes when:
 
+- root `AGENTS.md` is the canonical operating file and contains the shared workspace
+  routing without duplicated instructions;
+- `CLAUDE.md` delegates to `AGENTS.md` instead of maintaining competing rules;
 - user context comes from the root `USER.md`;
 - durable knowledge lookup starts from `wiki/index.md`;
 - durable claims cite wiki pages and their source paths;

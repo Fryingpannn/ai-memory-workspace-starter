@@ -1,20 +1,19 @@
-# Stage 4: Onboard the User
+# Stage 5: Create the Portable User Profile
 
-This is a short, optional profile-building conversation adapted from Hermes's current
-first-contact onboarding. The current Codex, Claude, or other setup agent runs it.
-Do not start a Hermes chat merely to trigger onboarding.
+Use the confirmed answers from the supervised Hermes onboarding in Stage 4. This stage
+turns those answers into the portable root `USER.md` shared by file-aware harnesses.
 
-Upstream reference:
-`https://github.com/NousResearch/hermes-agent/blob/main/agent/onboarding.py`
-
-Hermes's first-contact flow is not part of `hermes setup`, may already have been shown,
-and writes to a Hermes-profile memory file. This stage creates the portable workspace
-profile instead.
+Hermes's profile memory and the workspace root `USER.md` are separate files. Do not
+silently synchronize them. The root file is canonical for this workspace.
 
 ## Ask Once
 
-Offer to build a short profile and explain that the user may decline or answer only
-what they are comfortable sharing. If accepted, ask in one message:
+If Stage 4 already produced confirmed answers, do not ask again. Draft `USER.md` from
+those answers and show it for review.
+
+If Stage 4 onboarding was skipped or incomplete, offer a short profile and explain that
+the user may decline or answer only what they are comfortable sharing. If accepted, ask
+in one message:
 
 ```text
 1. What should agents call you?
@@ -32,7 +31,7 @@ If the user declines:
 - if `USER.md` is the new starter default, replace its brackets with `NOT PROVIDED`
   rather than leaving unresolved placeholders;
 - record only that onboarding was declined, without guessing why;
-- ask only for the workspace-purpose sentence later when Stage 5 needs it.
+- ask only for the workspace-purpose sentence later when Stage 6 needs it.
 
 ## External Lookup
 
@@ -60,7 +59,7 @@ Use the root `USER.md` as the canonical portable profile for this workspace.
 - Record unknowns as `UNKNOWN`; do not infer personal facts.
 - Do not leave bracketed starter placeholders after this stage.
 - Do not create a duplicate `wiki/pages/user-profile.md`.
-- Do not write or synchronize Hermes's user-level `USER.md` during this setup.
+- Do not write or resynchronize Hermes's user-level profile memory in this stage.
 
 `wiki/index.md` links to the root profile. Future agents discover it through
 `AGENTS.md`, regardless of harness.

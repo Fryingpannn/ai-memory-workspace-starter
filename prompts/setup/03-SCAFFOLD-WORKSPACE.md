@@ -18,6 +18,8 @@ Spawn one clean-context scaffold subagent when supported. Give it only:
 - Never edit an existing project folder.
 - Preserve existing `AGENTS.md`, `CLAUDE.md`, `USER.md`, `README.md`, `.gitignore`, and
   `wiki/`.
+- When root `AGENTS.md` is missing, reserve that path for Hermes `/init` in Stage 4.
+  Do not copy the starter fallback yet.
 - Record every collision for review.
 
 The desired root skeleton is:
@@ -38,17 +40,19 @@ skills/
 wiki/
 ```
 
-If `.gitignore`, `README.md`, `AGENTS.md`, `CLAUDE.md`, or `USER.md` is absent, add the
-starter default. If any exists, leave it byte-for-byte unchanged; Stage 4 personalizes
-a new `USER.md`, and Stage 7 handles the optional one-line memory route in existing
-operating files.
+If `.gitignore`, `README.md`, `CLAUDE.md`, or `USER.md` is absent, add the starter
+default. If any exists, leave it byte-for-byte unchanged. Stage 4 creates a missing
+`AGENTS.md` through Hermes `/init`; the starter version is fallback-only. Stage 5
+personalizes a new `USER.md`, and Stage 8 links the Hermes harness to shared memory.
 
 When an existing directory such as `wiki/` is present, add only missing files after
 showing the exact proposed paths. Do not replace existing pages.
 
 After copying, verify that the target contains `SETUP.md` and every routed prompt.
-Continue from the target copy. Remove only the agent-created temporary clone after it
-is no longer needed; never remove a clone supplied by the user.
+Record whether `AGENTS.md` was preserved or reserved for Hermes. Continue from the
+target copy. Keep the agent-created temporary clone until Stage 4 confirms native
+`/init` or copies the fallback `AGENTS.md`. Remove it only after it is no longer needed;
+never remove a clone supplied by the user.
 
 ## Review
 
@@ -56,6 +60,7 @@ Return:
 
 - files created;
 - files skipped because they already existed;
+- whether `AGENTS.md` was preserved or reserved for Hermes `/init`;
 - unresolved collisions;
 - confirmation that no existing project file changed.
 

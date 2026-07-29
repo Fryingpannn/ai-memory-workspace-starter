@@ -17,12 +17,13 @@ an existing file silently.
 
 ## AGENTS.md or CLAUDE.md Already Exists
 
-Preserve it. Follow `prompts/setup/07-LINK-MEMORY.md`, show the one-line wiki bridge,
-and insert only that line after the user approves.
+Preserve it. Before Hermes `/init` merge-updates an existing `AGENTS.md`, follow
+`prompts/setup/04-INITIALIZE-WITH-HERMES.md` and get approval. Later follow
+`prompts/setup/08-LINK-MEMORY.md` for the shared-routing block and Claude bridge.
 
 ## USER.md Already Exists
 
-Preserve it. Follow `prompts/setup/04-ONBOARD-USER.md`, show only compact proposed
+Preserve it. Follow `prompts/setup/05-ONBOARD-USER.md`, show only compact proposed
 additions based on confirmed answers, and do not create a duplicate wiki profile.
 
 ## The Outer Folder Is Already a Git Repository
@@ -32,7 +33,7 @@ nested memory repository.
 
 ## Existing Projects Have Their Own Git Repositories
 
-Leave their source unchanged. Follow `prompts/setup/08-INITIALIZE-GIT.md` and ask whether
+Leave their source unchanged. Follow `prompts/setup/09-INITIALIZE-GIT.md` and ask whether
 they should remain independent and ignored or become Git submodules. Never choose
 submodules silently.
 
@@ -41,16 +42,23 @@ submodules silently.
 Finish the guided setup without them. Connecting scattered projects is an advanced
 manual step and is not part of the one-prompt workflow.
 
-## Hermes Is Installed but No Hermes Chat Is Running
+## Hermes Is Installed but `/init` Has Not Run
 
-That is expected. The original Codex or Claude task continues the workspace setup.
+The original Codex or Claude manager must supervise one Hermes session in Stage 4.
+Complete or decline onboarding, run `/init`, verify root `AGENTS.md`, then return to the
+original setup task.
 
 ## Hermes Was Installed but the Workspace Has No Files
 
 Hermes installation creates user-level profile and configuration state. Registering a
-Hermes project points Hermes at the folder but does not create this starter's files.
-The original Codex or Claude manager must complete Stage 3 to add the workspace-local
-skeleton.
+Hermes project points Hermes at the folder but does not itself write `AGENTS.md`. The
+manager must complete Stage 3, then run Hermes `/init` in Stage 4.
+
+## Hermes `/init` Fails
+
+Retry once after checking Hermes authentication, active project, `terminal.cwd`, and
+file tools. If it still fails, copy the starter `AGENTS.md` only when the root file is
+missing, report the fallback, and continue. Never replace an existing file.
 
 ## A Source Is Missing
 

@@ -30,17 +30,22 @@ personalized or used as the user's long-term workspace.
 1. Choose or create one outer workspace.
 2. Install and configure Hermes on the system, then register the outer folder as its
    active project.
-3. Continue in the original Codex or Claude task; Hermes does not take over.
-4. Add missing skeleton files without replacing existing files.
-5. Build a short, user-approved root `USER.md` from the Hermes onboarding questions.
-6. Build the root `wiki/` using the
+3. Add supporting skeleton files while reserving a missing root `AGENTS.md` for Hermes.
+4. Run one supervised Hermes session in the outer folder:
+   - complete or decline Hermes's profile onboarding;
+   - run native `/init` so Hermes creates or merge-updates root `AGENTS.md`, unless the
+     user explicitly preserves a pre-existing file.
+5. Return to the original Codex or Claude manager; Hermes does not take over.
+6. Build a short, user-approved root `USER.md` from the confirmed onboarding answers.
+7. Build the root `wiki/` using the
    [LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
-7. Analyze up to three approved project folders with read-only subagents.
-8. Integrate sourced project knowledge into the wiki.
-9. Link `AGENTS.md` and `CLAUDE.md` to long-term memory.
-10. Choose whether child Git repositories stay independent or become submodules.
-11. Initialize or review the outer workspace Git repository.
-12. Verify retrieval from a fresh session.
+8. Analyze up to three approved project folders with read-only subagents.
+9. Integrate sourced project knowledge into the wiki.
+10. Add the shared memory block to the Hermes-generated `AGENTS.md`.
+11. Keep `CLAUDE.md` as a compatibility bridge to canonical `AGENTS.md`.
+12. Choose whether child Git repositories stay independent or become submodules.
+13. Initialize or review the outer workspace Git repository.
+14. Verify retrieval from a fresh session.
 
 ## Outer Workspace
 
@@ -84,12 +89,16 @@ The root `USER.md` is the portable user profile shared by file-aware harnesses.
 
 ## Existing AGENTS.md and CLAUDE.md
 
-Missing files receive starter defaults. Existing files are not replaced.
+A missing `AGENTS.md` is created by Hermes `/init`; the starter version is fallback-only.
+When `AGENTS.md` already exists, Hermes `/init` can merge-update it only after the user
+approves. Existing content is not replaced.
 
-Setup shows this one-line bridge and asks before inserting it:
+After the wiki exists, setup shows the concise shared-routing block before merging it
+into canonical `AGENTS.md`. `CLAUDE.md` points to `AGENTS.md` instead of duplicating
+those rules.
 
 ```text
-Read `USER.md` for confirmed user context. Use `wiki/index.md` as long-term memory and follow `wiki/SCHEMA.md` to store durable entities and relationships as an interlinked Markdown knowledge graph.
+Read AGENTS.md. It is the canonical entry document for this workspace. Everything there applies here.
 ```
 
 ## Safety

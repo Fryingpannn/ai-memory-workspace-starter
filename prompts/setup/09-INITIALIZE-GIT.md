@@ -1,4 +1,4 @@
-# Stage 8: Initialize and Review Git
+# Stage 9: Initialize and Review Git
 
 The outer workspace should version the memory skeleton and wiki without absorbing
 independent project contents accidentally.

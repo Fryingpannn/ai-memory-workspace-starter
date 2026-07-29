@@ -1,7 +1,7 @@
 # Stage 2: Install and Configure Hermes
 
-The current Codex, Claude, or other agent runs this stage. Do not transfer the setup to
-a Hermes chat.
+The current Codex, Claude, or other agent runs this stage and retains setup ownership.
+Stage 4 uses one supervised Hermes session only.
 
 ## Required Local Capabilities
 
@@ -48,6 +48,8 @@ Use `hermes model` and `hermes tools`.
 - Ask once for the exact system changes: install when needed, reuse or import the
   detected credential, connect the browser, install the user-level gateway, and
   register the confirmed outer folder as the active Hermes project and `terminal.cwd`.
+  Explain that Stage 4 will run one supervised Hermes session for profile onboarding
+  and native `/init`, after which the original agent resumes control.
 - If approved, use the built-in credential flow without manually reading, printing, or
   copying tokens. Start a separate authentication flow only when no supported import is
   available, the user declines it, or it fails.
@@ -94,10 +96,10 @@ hermes config set terminal.cwd "[OUTER PATH]"
 If a Hermes project for that exact path already exists, reuse it instead of creating a
 duplicate. Verify the active project and `terminal.cwd`.
 
-This registration does not create `AGENTS.md`, `USER.md`, the wiki, or other
-workspace-local files. The current Codex or Claude manager creates those files in Stage
-3 from the starter. Both actions are part of initializing the workspace, but they have
-different storage boundaries.
+This registration does not create workspace-local files. Stage 3 adds supporting
+skeleton files while reserving a missing `AGENTS.md`; Stage 4 creates that file with
+Hermes `/init`. Both actions initialize the workspace but have different storage
+boundaries.
 
 The current agent continues to Stage 3 from the confirmed outer workspace root. Do not
-start a Hermes conversation merely to continue setup.
+start an unsupervised Hermes conversation or transfer the remaining setup to Hermes.
