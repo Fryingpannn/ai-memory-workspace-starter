@@ -1,8 +1,9 @@
-# AI Memory Workspace Setup Index
+# AI Memory Workspace Setup Manager
 
 This is the only setup entrypoint the user needs.
 
-Read one stage at a time. Do not load every setup file at once.
+Read one stage at a time. Keep the current Codex, Claude, or other file-aware agent as
+the manager for the entire setup.
 
 ## User Prompt
 
@@ -15,90 +16,65 @@ Start with SETUP.md and follow the setup index.
 
 ## Goal
 
-Prepare Hermes, create or open the user's private memory workspace, connect approved
-existing projects, personalize the memory routes, and stop for review before saving.
+Turn one outer folder into a files-first memory workspace without moving or rewriting
+its existing projects.
+
+The starter repository supplies instructions and missing skeleton files. It is not the
+user's personalized workspace.
 
 ## Global Rules
 
 - Ask only questions the current stage cannot answer safely.
-- Ask before downloading or running an installer.
-- Ask before provider authentication or other account access.
-- Use an existing Codex/ChatGPT or supported Claude subscription for Hermes.
-- Use local Google Chrome for browser tasks. Do not add a separate web-search provider.
-- Never personalize the public starter repository.
-- Never overwrite a non-empty destination.
-- Never move, copy, or edit an existing project during setup.
-- Never read secrets or broad source trees during project intake.
-- Ask before creating a repository, committing, or pushing.
-- Stop at every review or handoff gate.
+- Keep the setup inside the user's current agent. Do not hand off to Hermes.
+- Never replace existing content. Use only reviewed, targeted edits.
+- Never move or edit an existing project during setup.
+- Never read secrets, generated dependencies, or broad source trees.
+- Show proposed changes before editing an existing `AGENTS.md` or `CLAUDE.md`.
+- Ask before installing software, authenticating an account, initializing Git,
+  committing, creating a remote, or pushing.
+- Do not support scattered projects in the guided setup. They can be connected later.
+- Read only the next routed prompt.
 
-## Route 1: Prepare Hermes
+## Stage 0: Make the Starter Available
 
-Check whether Hermes is installed and whether its required capabilities are configured.
+If this repository is not already available locally, clone it into an agent-created
+temporary staging directory.
 
-If the current agent is Claude, Codex, or another non-Hermes agent:
+- Do not clone it over the user's outer folder.
+- Do not personalize the staging clone.
+- Keep its Git history and remote separate from the user's workspace.
+- Record the staging path for the scaffold stage.
 
-1. Read `prompts/INSTALL-HERMES.md`.
-2. Install Hermes only when needed.
-3. Configure and verify the required Hermes capabilities.
-4. Stop at the Hermes handoff.
-5. Tell the user to open an empty directory, start Hermes, and paste the same short
-   prompt from this file.
+## Routed Workflow
 
-Do not perform the workspace personalization inside the installing agent. The tutorial
-should visibly hand control to Hermes.
+Follow these prompts in order:
 
-If the current agent is already Hermes and the required capabilities work, continue to
-Route 2.
+1. `prompts/setup/01-CHOOSE-WORKSPACE.md`
+2. `prompts/setup/02-INSTALL-HERMES.md`
+3. `prompts/setup/03-SCAFFOLD-WORKSPACE.md`
+4. `prompts/setup/04-BUILD-WIKI.md`
+5. `prompts/setup/05-ANALYZE-PROJECTS.md`, only when projects already exist
+6. `prompts/setup/06-LINK-MEMORY.md`
+7. `prompts/setup/07-INITIALIZE-GIT.md`
+8. `prompts/VERIFY-WORKSPACE.md`
 
-## Route 2: Create or Open the Workspace
+The manager owns user questions and approval gates. Spawn clean-context subagents only
+where a stage explicitly requests them. If subagents are unavailable, execute that
+stage in isolation and avoid unrelated context.
 
-Read `prompts/START-HERE.md`.
+After Stage 1, use the confirmed outer workspace as the working directory and project
+root for every remaining stage.
 
-That stage owns:
+## Completion
 
-- public starter versus private copy detection;
-- destination and GitHub questions;
-- cloning and remote safety;
-- local-only fallback;
-- entry into the staged workspace setup.
+Setup is complete when:
 
-## Route 3: Discover and Personalize
-
-After the local clone is validated, read `prompts/HERMES-SETUP.md`.
-
-Follow only the next file it names:
-
-1. `prompts/setup/01-DISCOVER.md`
-2. `prompts/setup/02-CONNECT-PROJECTS.md`, when existing projects are approved
-3. `prompts/setup/03-PERSONALIZE-MEMORY.md`
-4. `prompts/setup/04-OPTIONAL-REORGANIZE.md`, only when explicitly requested
-
-Stop at each confirmation gate. Do not commit or push during these stages.
-
-## Route 4: Review and Save
-
-After personalization:
-
-1. Show every changed file.
-2. Show `git diff --stat` and `git status`.
-3. Confirm connected projects were not changed.
-4. Confirm the local path map is ignored.
-5. Ask for approval before the first commit.
-6. Ask separately before pushing to a private remote.
-
-## Route 5: Fresh-Session Proof
-
-In a visibly fresh Hermes session at the workspace root, read:
-
-`prompts/VERIFY-WORKSPACE.md`
-
-Do not claim long-term memory works until that verification passes.
-
-## Completion States
-
-- `HERMES_HANDOFF`: Hermes is ready and the user must start a Hermes session.
-- `USER_CONFIRMATION`: a setup mode or inspection scope needs approval.
-- `USER_REVIEW`: workspace changes are ready to inspect.
-- `FRESH_SESSION_REQUIRED`: setup is ready for a clean-session test.
-- `COMPLETE`: the fresh-session test passed and approved Git actions are finished.
+- one outer workspace root is confirmed;
+- Hermes is installed and its required local capabilities are verified;
+- missing skeleton files exist without replacing prior work;
+- `wiki/` has an index, schema, log, raw-source area, and interlinked pages;
+- approved existing projects have sourced wiki entries;
+- memory routing is present or was explicitly declined;
+- the outer workspace is a Git repository;
+- the user has reviewed all changes;
+- a fresh session can retrieve sourced knowledge through `wiki/index.md`.

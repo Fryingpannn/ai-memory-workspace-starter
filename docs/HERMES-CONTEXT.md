@@ -12,3 +12,5 @@ Hermes-specific instructions to take priority over `AGENTS.md`.
 Hermes keeps its global personality file outside this repository, so this starter does
 not include a root `SOUL.md`.
 
+Hermes is installed and configured at the system level during setup. Codex or Claude
+remains the setup manager; the user does not need to switch into a Hermes chat.

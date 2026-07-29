@@ -17,7 +17,7 @@ locations while Git tracks stable project IDs and profiles.
 GitHub is useful for backup, collaboration, and machine synchronization. Keep a
 personalized memory workspace private unless every file is intentionally public.
 
-After reviewing the starter:
+After reviewing the outer workspace:
 
 ```bash
 git status

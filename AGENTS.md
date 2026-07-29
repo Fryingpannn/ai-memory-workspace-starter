@@ -15,8 +15,8 @@ This workspace helps [OWNER OR TEAM] manage [AREAS OF WORK] and produce
 
 1. Read `AGENTS.md`.
 2. Read `README.md`.
-3. Read `projects/index.md` when project context matters.
-4. Read `projects/local-paths.md` only when a connected project must be located.
+3. Use `wiki/index.md` as long-term memory and follow `wiki/SCHEMA.md` to store durable entities and relationships as an interlinked Markdown knowledge graph.
+4. Read `projects/index.md` when project context matters.
 5. Inspect only the files needed for the current task.
 
 ## Workspace Map
@@ -30,6 +30,7 @@ This workspace helps [OWNER OR TEAM] manage [AREAS OF WORK] and produce
 - `memory/`: recent dated working context
 - `wiki/pages/`: durable facts and decisions
 - `wiki/raw/`: source records and evidence
+- `wiki/SCHEMA.md`: knowledge structure and maintenance rules
 - `wiki/index.md`: discovery map for durable knowledge
 - `wiki/inbox.md`: unsynthesized material queue
 - `wiki/log.md`: dated durable-wiki changes

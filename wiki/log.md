@@ -4,5 +4,6 @@ Record dated changes to durable wiki knowledge.
 
 ## Changes
 
-- [DATE]: Initial starter workspace created.
+## [DATE] setup | Initial workspace
 
+Created the starter wiki structure.

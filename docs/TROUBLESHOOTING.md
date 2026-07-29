@@ -2,50 +2,48 @@
 
 ## The User Only Has the Public Repository Link
 
-Read `SETUP.md`. It will route Hermes to `prompts/START-HERE.md`, which creates a
-private copy with GitHub CLI when the user approves or uses the local-only fallback.
-Never push personalized memory to the public starter.
+Read `SETUP.md`. Clone the starter into an agent-created temporary directory, then use
+it as the instruction and skeleton source. Do not personalize or push from that clone.
 
-## GitHub CLI Is Not Authenticated
+## The User Does Not Have an Outer Workspace
 
-Pause for `gh auth login`, ask the user to use GitHub's template button, or continue
-locally after renaming the public starter remote to `starter` and disabling its push
-URL as directed by `prompts/START-HERE.md`.
+Follow `prompts/setup/01-CHOOSE-WORKSPACE.md`. Ask where to create one folder, confirm
+the exact path, and use it as the project root for the remaining stages.
 
-## Wrong Working Directory
+## The Outer Folder Already Contains Files
 
-Run `pwd` and confirm you are at the repository root before letting an agent edit files.
+That is expected. Add only missing skeleton files. Record collisions and never replace
+an existing file silently.
 
-## Instructions Were Ignored
+## AGENTS.md or CLAUDE.md Already Exists
 
-Ask the agent which context file it loaded. Confirm root `AGENTS.md` exists and keep
-Claude-specific instructions in the short `CLAUDE.md` bridge.
-
-## AGENTS.md Is Growing Too Large
-
-Keep routing, safety, and operating rules in `AGENTS.md`. Move project detail to the
-project, durable facts to the wiki, and repeatable procedures to `skills/`.
-
-## An Existing Project Is Somewhere Else
-
-Do not move it just to complete setup. Add a tracked profile under `projects/` and put
-its machine-specific location in the gitignored `projects/local-paths.md`.
-
-## A Project Path Broke on Another Machine
-
-Update `projects/local-paths.md` on that machine. Do not commit the local path map.
-The tracked project ID and profile should remain the same.
+Preserve it. Follow `prompts/setup/06-LINK-MEMORY.md`, show the one-line wiki bridge,
+and insert only that line after the user approves.
 
 ## The Outer Folder Is Already a Git Repository
 
-Do not place another tracked memory repository inside it by default. Either deliberately
-merge the workspace files into the outer repository or keep the memory workspace beside
-it and connect it by path.
+Use the existing repository. Do not reinitialize it, replace its remote, or create a
+nested memory repository.
+
+## Existing Projects Have Their Own Git Repositories
+
+Leave them unchanged. The outer repository tracks memory and control files. If the outer
+repository is new, propose exact ignore entries for the child project directories
+before running `git init`.
+
+## Projects Are Outside the Outer Workspace
+
+Finish the guided setup without them. Connecting scattered projects is an advanced
+manual step and is not part of the one-prompt workflow.
+
+## Hermes Is Installed but No Hermes Chat Is Running
+
+That is expected. The original Codex or Claude task continues the workspace setup.
 
 ## A Source Is Missing
 
-Do not present an unsupported durable claim as fact. Preserve its origin in `wiki/raw/`
-and add provenance to the durable wiki page.
+Do not present an unsupported durable claim as fact. Record uncertainty, preserve
+provenance under `wiki/raw/`, and queue unresolved material in `wiki/inbox.md`.
 
 ## A Secret Was Committed
 
