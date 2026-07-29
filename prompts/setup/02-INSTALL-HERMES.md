@@ -40,12 +40,19 @@ Use `hermes model` and `hermes tools`.
 
 - From Codex, prefer OpenAI Codex with ChatGPT OAuth.
 - From Claude, use Anthropic OAuth only when the subscription supports it.
+- When Hermes offers its supported reuse or import of the current agent's credential
+  store, show that choice and ask approval. If approved, use the built-in flow without
+  manually reading, printing, or copying tokens.
 - Keep the local terminal backend.
 - Enable browser, memory, session search, skills, and cron.
 - Connect browser tools to local Google Chrome with `/browser connect`.
 - Do not install a standalone search package.
 
-Ask before starting a new authentication flow.
+Ask before reusing credentials or starting a new authentication flow.
+
+If cron is enabled but the gateway is not running, show `hermes gateway install` and
+ask before installing the user-level background service. Do not use a system service or
+administrator privileges for this tutorial.
 
 ## Verify Without Handing Off
 
@@ -55,8 +62,12 @@ Run:
 hermes --version
 hermes doctor
 hermes tools
+hermes gateway status
 hermes cron status
 ```
+
+Cron passes only when the user-level gateway is running. Do not create a scheduled job
+merely to verify it.
 
 The current agent continues to Stage 3 from the confirmed outer workspace root. Do not
 start a Hermes conversation merely to continue setup.

@@ -38,4 +38,8 @@ Never change a child project's Git state.
 5. Ask separately before creating or pushing to a private GitHub remote.
 6. Never push workspace memory to the public starter remote.
 
+After the target contains every routed prompt and the reviewed Git state is safe,
+remove the temporary starter clone only when it was created by this setup. Report the
+removed path. Never remove a clone supplied by the user.
+
 Return `READY_FOR_VERIFICATION` after the reviewed local Git state is safe.
