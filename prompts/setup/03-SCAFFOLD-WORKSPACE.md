@@ -22,8 +22,10 @@ Spawn one clean-context scaffold subagent when supported. Give it only:
 The desired root skeleton is:
 
 ```text
+.gitignore
 AGENTS.md
 CLAUDE.md
+README.md
 SETUP.md
 docs/
 memory/
@@ -34,8 +36,9 @@ skills/
 wiki/
 ```
 
-If `AGENTS.md` or `CLAUDE.md` is absent, add the starter default. If either exists,
-leave it byte-for-byte unchanged; Stage 6 handles the optional one-line memory route.
+If `.gitignore`, `README.md`, `AGENTS.md`, or `CLAUDE.md` is absent, add the starter
+default. If any exists, leave it byte-for-byte unchanged; Stage 6 handles the optional
+one-line memory route in existing operating files.
 
 When an existing directory such as `wiki/` is present, add only missing files after
 showing the exact proposed paths. Do not replace existing pages.
