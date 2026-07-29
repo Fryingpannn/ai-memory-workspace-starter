@@ -2,6 +2,9 @@
 
 This wiki is the workspace's long-term, interlinked knowledge layer.
 
+The root `USER.md` is the canonical portable user profile. Link to it from
+`wiki/index.md`; do not duplicate it under `wiki/pages/`.
+
 ## Layers
 
 - `raw/`: source records and provenance; do not silently rewrite source material.
@@ -29,7 +32,8 @@ index, then append a dated log entry.
 ### Query
 
 Read `index.md` first, follow only relevant links, and cite the local pages and sources
-used. File durable new synthesis back into the wiki when the user approves.
+used. Read the linked root `USER.md` when user context matters. File durable new
+synthesis back into the wiki when the user approves.
 
 ### Lint
 

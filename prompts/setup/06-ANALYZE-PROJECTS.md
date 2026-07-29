@@ -1,10 +1,11 @@
-# Stage 5: Analyze Existing Projects
+# Stage 6: Analyze Existing Projects
 
 Use only for project folders already inside the confirmed outer workspace.
 
 ## Select Scope
 
-List immediate child folders only. Ask the user which one to three project folders to
+List immediate child folders only. If the user already approved all detected projects
+during Stage 1, do not ask again. Otherwise ask which one to three project folders to
 analyze first.
 
 Exclude workspace control folders such as `wiki`, `memory`, `projects`, `prompts`,
@@ -54,9 +55,12 @@ Uncertainty and open questions
 
 ## Spawn One Wiki Integrator
 
-After the user reviews the briefs, show the proposed integration plan and ask approval.
-Only then spawn one separate clean-context wiki integrator. Give it only the approved
-briefs, source paths, the workspace root, and `wiki/SCHEMA.md`.
+After the user reviews the briefs, show the proposed integration plan. Ask another
+question only when the briefs contain uncertainty, a collision, or a material choice.
+Otherwise integrate the reversible wiki-only changes and show the exact result.
+
+Spawn one separate clean-context wiki integrator. Give it only the reviewed briefs,
+source paths, the workspace root, and `wiki/SCHEMA.md`.
 
 The integrator:
 

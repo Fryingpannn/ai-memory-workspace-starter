@@ -5,4 +5,3 @@ session may need.
 
 Promote durable facts and decisions to the wiki instead of letting dated notes become the
 permanent source of truth.
-

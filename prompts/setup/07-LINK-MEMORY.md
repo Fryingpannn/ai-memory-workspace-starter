@@ -1,12 +1,15 @@
-# Stage 6: Link Agents to Long-Term Memory
+# Stage 7: Link Agents to Long-Term Memory
 
 The wiki exists independently of any one model or harness. This stage makes it
 discoverable from future Codex and Claude sessions.
 
-Use this exact bridge:
+The root `USER.md` is the canonical portable user profile. `wiki/index.md` points to it;
+do not create a duplicate wiki profile.
+
+Use this exact one-line bridge:
 
 ```text
-Use `wiki/index.md` as long-term memory and follow `wiki/SCHEMA.md` to store durable entities and relationships as an interlinked Markdown knowledge graph.
+Read `USER.md` for confirmed user context. Use `wiki/index.md` as long-term memory and follow `wiki/SCHEMA.md` to store durable entities and relationships as an interlinked Markdown knowledge graph.
 ```
 
 ## Missing Operating Files
@@ -27,7 +30,7 @@ If either file existed before setup:
 4. If approved, insert only that line.
 5. If declined, record that wiki routing must be invoked manually.
 
-Do not add broader policy, rewrite formatting, or duplicate an equivalent existing
-instruction.
+Do not add broader policy, rewrite formatting, or duplicate equivalent existing
+instructions.
 
 Show the exact diff before continuing.

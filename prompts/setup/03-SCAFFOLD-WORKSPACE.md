@@ -16,7 +16,8 @@ Spawn one clean-context scaffold subagent when supported. Give it only:
 - Never replace, truncate, or silently merge an existing file.
 - Never copy the starter's `.git/` directory or remote.
 - Never edit an existing project folder.
-- Preserve existing `AGENTS.md`, `CLAUDE.md`, `README.md`, `.gitignore`, and `wiki/`.
+- Preserve existing `AGENTS.md`, `CLAUDE.md`, `USER.md`, `README.md`, `.gitignore`, and
+  `wiki/`.
 - Record every collision for review.
 
 The desired root skeleton is:
@@ -25,6 +26,7 @@ The desired root skeleton is:
 .gitignore
 AGENTS.md
 CLAUDE.md
+USER.md
 README.md
 SETUP.md
 docs/
@@ -36,9 +38,10 @@ skills/
 wiki/
 ```
 
-If `.gitignore`, `README.md`, `AGENTS.md`, or `CLAUDE.md` is absent, add the starter
-default. If any exists, leave it byte-for-byte unchanged; Stage 6 handles the optional
-one-line memory route in existing operating files.
+If `.gitignore`, `README.md`, `AGENTS.md`, `CLAUDE.md`, or `USER.md` is absent, add the
+starter default. If any exists, leave it byte-for-byte unchanged; Stage 4 personalizes
+a new `USER.md`, and Stage 7 handles the optional one-line memory route in existing
+operating files.
 
 When an existing directory such as `wiki/` is present, add only missing files after
 showing the exact proposed paths. Do not replace existing pages.

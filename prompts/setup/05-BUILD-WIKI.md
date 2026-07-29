@@ -1,11 +1,7 @@
-# Stage 4: Build the Long-Term Wiki
+# Stage 5: Build the Long-Term Wiki
 
-Ask one question before spawning the worker:
-
-```text
-In one or two sentences, what is this workspace for and what knowledge should become
-more useful over time?
-```
+Read the confirmed workspace purpose from the root `USER.md`. If the user declined
+onboarding and the purpose is still unknown, ask only for that one sentence.
 
 Spawn one clean-context wiki architect subagent when supported.
 
@@ -13,7 +9,7 @@ Give it:
 
 - the confirmed outer workspace root;
 - this prompt;
-- the user's short description of what the workspace is for;
+- the confirmed workspace purpose from `USER.md`;
 - Andrej Karpathy's LLM Wiki idea file:
   `https://gist.githubusercontent.com/karpathy/442a6bf555914893e9891c11519de94f/raw/ac46de1ad27f92b28ac95459c782c07f6b8c964a/llm-wiki.md`
 
@@ -56,6 +52,7 @@ editing it.
 - Do not add vector search, embeddings, a database, or RAG.
 
 Seed only confirmed workspace-level knowledge. Project-specific knowledge is added in
-Stage 5.
+Stage 6. Link the root `USER.md` from `wiki/index.md`; do not duplicate personal facts
+in a wiki user-profile page.
 
 Return the created or changed files and the proposed wiki schema for user review.

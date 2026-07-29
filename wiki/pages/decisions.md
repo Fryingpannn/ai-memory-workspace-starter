@@ -6,4 +6,3 @@
 - Decision: [REAL PROJECT DECISION]
 - Rationale: [WHY THIS DECISION WAS MADE]
 - Provenance: [SOURCE OR ORIGIN NOTE]
-

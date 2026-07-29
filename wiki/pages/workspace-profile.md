@@ -1,22 +1,19 @@
 # Workspace Profile
 
-## Owner or Team
+## Purpose
 
-[OWNER OR TEAM]
+[CONFIRMED WORKSPACE PURPOSE]
 
-## Important Person or Role
+## Scope
 
-[IMPORTANT PERSON OR ROLE]
+[WHAT BELONGS IN THIS OUTER WORKSPACE]
 
-## Active Project
+## Routing
 
-[ACTIVE PROJECT]
-
-## Safe Durable Fact
-
-[SAFE DURABLE FACT]
+- Read the root [User Profile](../../USER.md) for confirmed user context.
+- Use the [wiki index](../index.md) for durable knowledge.
+- Use the [project registry](../../projects/index.md) for project discovery.
 
 ## Provenance
 
 [SOURCE OR ORIGIN NOTE]
-

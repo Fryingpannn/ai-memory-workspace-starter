@@ -9,8 +9,20 @@
 
 Review paths explicitly. Do not use `git add .` blindly.
 
-`projects/local-paths.md` is intentionally ignored. Each machine keeps its own project
-locations while Git tracks stable project IDs and profiles.
+`projects/local-paths.md` is intentionally ignored and is only for projects outside the
+outer workspace. Immediate child projects use stable root-relative paths in their
+tracked profiles.
+
+When child projects have their own repositories, choose explicitly:
+
+- keep them independent and ignored for the simplest beginner setup; or
+- register them as submodules when portable parent-to-child pointers justify the extra
+  Git workflow.
+
+Before work that needs current code, fetch and fast-forward the outer repository from
+its tracked remote default branch, normally `origin/main`. Then sync submodule URLs and
+update recursively to the commits pinned by the parent. Do not independently advance a
+submodule beyond its pinned commit. Stop on local changes or divergence.
 
 ## GitHub Is the Optional Remote Copy
 
@@ -21,7 +33,7 @@ After reviewing the outer workspace:
 
 ```bash
 git status
-git add SETUP.md README.md AGENTS.md CLAUDE.md memory wiki projects docs skills outputs prompts
+git add SETUP.md README.md AGENTS.md CLAUDE.md USER.md memory wiki projects docs skills outputs prompts
 git diff --cached
 git commit -m "Personalize AI memory workspace"
 git push

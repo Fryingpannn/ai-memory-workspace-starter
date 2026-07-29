@@ -28,16 +28,19 @@ personalized or used as the user's long-term workspace.
 ## Setup Flow
 
 1. Choose or create one outer workspace.
-2. Install and configure Hermes on the system.
+2. Install and configure Hermes on the system, then register the outer folder as its
+   active project.
 3. Continue in the original Codex or Claude task; Hermes does not take over.
 4. Add missing skeleton files without replacing existing files.
-5. Build the root `wiki/` using the
+5. Build a short, user-approved root `USER.md` from the Hermes onboarding questions.
+6. Build the root `wiki/` using the
    [LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
-6. Analyze up to three approved project folders with read-only subagents.
-7. Integrate sourced project knowledge into the wiki.
-8. Link `AGENTS.md` and `CLAUDE.md` to long-term memory.
-9. Initialize or review the outer workspace Git repository.
-10. Verify retrieval from a fresh session.
+7. Analyze up to three approved project folders with read-only subagents.
+8. Integrate sourced project knowledge into the wiki.
+9. Link `AGENTS.md` and `CLAUDE.md` to long-term memory.
+10. Choose whether child Git repositories stay independent or become submodules.
+11. Initialize or review the outer workspace Git repository.
+12. Verify retrieval from a fresh session.
 
 ## Outer Workspace
 
@@ -47,6 +50,7 @@ The intended layout is:
 My-Workspace/
 ├── AGENTS.md
 ├── CLAUDE.md
+├── USER.md
 ├── wiki/
 ├── memory/
 ├── projects/                  metadata registry, not project source
@@ -55,13 +59,13 @@ My-Workspace/
 └── automations/
 ```
 
-`client-portal/` and `automations/` may keep their own Git histories. The outer Git
-repository tracks the memory and workspace control files, not independent child
-repositories.
+`client-portal/` and `automations/` may keep their own Git histories. Setup explicitly
+offers two modes: keep child repositories independent and ignored, or register them as
+Git submodules when portability is worth the additional Git complexity.
 
 If the outer folder already uses Git, setup preserves its repository and remote. If it
-does not, setup proposes ignore rules for independent child projects before asking to
-run `git init`.
+does not, setup applies the reviewed child-repository mode before asking to run
+`git init`.
 
 ## Wiki Model
 
@@ -75,6 +79,9 @@ The root wiki follows three layers:
 changes. The interlinked Markdown pages act as the knowledge graph; vector search and a
 graph database are not required.
 
+The root `USER.md` is the portable user profile shared by file-aware harnesses.
+`wiki/index.md` links to it instead of duplicating those facts in a wiki page.
+
 ## Existing AGENTS.md and CLAUDE.md
 
 Missing files receive starter defaults. Existing files are not replaced.
@@ -82,7 +89,7 @@ Missing files receive starter defaults. Existing files are not replaced.
 Setup shows this one-line bridge and asks before inserting it:
 
 ```text
-Use `wiki/index.md` as long-term memory and follow `wiki/SCHEMA.md` to store durable entities and relationships as an interlinked Markdown knowledge graph.
+Read `USER.md` for confirmed user context. Use `wiki/index.md` as long-term memory and follow `wiki/SCHEMA.md` to store durable entities and relationships as an interlinked Markdown knowledge graph.
 ```
 
 ## Safety

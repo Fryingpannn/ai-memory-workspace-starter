@@ -17,8 +17,13 @@ an existing file silently.
 
 ## AGENTS.md or CLAUDE.md Already Exists
 
-Preserve it. Follow `prompts/setup/06-LINK-MEMORY.md`, show the one-line wiki bridge,
+Preserve it. Follow `prompts/setup/07-LINK-MEMORY.md`, show the one-line wiki bridge,
 and insert only that line after the user approves.
+
+## USER.md Already Exists
+
+Preserve it. Follow `prompts/setup/04-ONBOARD-USER.md`, show only compact proposed
+additions based on confirmed answers, and do not create a duplicate wiki profile.
 
 ## The Outer Folder Is Already a Git Repository
 
@@ -27,9 +32,9 @@ nested memory repository.
 
 ## Existing Projects Have Their Own Git Repositories
 
-Leave them unchanged. The outer repository tracks memory and control files. If the outer
-repository is new, propose exact ignore entries for the child project directories
-before running `git init`.
+Leave their source unchanged. Follow `prompts/setup/08-INITIALIZE-GIT.md` and ask whether
+they should remain independent and ignored or become Git submodules. Never choose
+submodules silently.
 
 ## Projects Are Outside the Outer Workspace
 
@@ -39,6 +44,13 @@ manual step and is not part of the one-prompt workflow.
 ## Hermes Is Installed but No Hermes Chat Is Running
 
 That is expected. The original Codex or Claude task continues the workspace setup.
+
+## Hermes Was Installed but the Workspace Has No Files
+
+Hermes installation creates user-level profile and configuration state. Registering a
+Hermes project points Hermes at the folder but does not create this starter's files.
+The original Codex or Claude manager must complete Stage 3 to add the workspace-local
+skeleton.
 
 ## A Source Is Missing
 

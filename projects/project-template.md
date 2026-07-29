@@ -15,7 +15,9 @@
 ## Repository
 
 - Remote: [REMOTE URL OR NONE]
-- Local path: See `projects/local-paths.md`
+- Local path: [ROOT-RELATIVE PATH OR SEE `projects/local-paths.md` FOR EXTERNAL PROJECTS]
+- Connection mode: [INDEPENDENT, SUBMODULE, OR EXTERNAL]
+- Remote default branch: [REMOTE BRANCH OR NONE]
 
 ## Authoritative Files
 

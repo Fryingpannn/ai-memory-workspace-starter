@@ -30,7 +30,8 @@ user's personalized workspace.
 - Never replace existing content. Use only reviewed, targeted edits.
 - Never move or edit an existing project during setup.
 - Never read secrets, generated dependencies, or broad source trees.
-- Show proposed changes before editing an existing `AGENTS.md` or `CLAUDE.md`.
+- Show proposed changes before editing an existing `USER.md`, `AGENTS.md`, or
+  `CLAUDE.md`.
 - Ask before installing software, authenticating an account, initializing Git,
   committing, creating a remote, or pushing.
 - Do not support scattered projects in the guided setup. They can be connected later.
@@ -62,11 +63,12 @@ Follow these prompts in order:
 1. `prompts/setup/01-CHOOSE-WORKSPACE.md`
 2. `prompts/setup/02-INSTALL-HERMES.md`
 3. `prompts/setup/03-SCAFFOLD-WORKSPACE.md`
-4. `prompts/setup/04-BUILD-WIKI.md`
-5. `prompts/setup/05-ANALYZE-PROJECTS.md`, only when projects already exist
-6. `prompts/setup/06-LINK-MEMORY.md`
-7. `prompts/setup/07-INITIALIZE-GIT.md`
-8. `prompts/VERIFY-WORKSPACE.md`
+4. `prompts/setup/04-ONBOARD-USER.md`
+5. `prompts/setup/05-BUILD-WIKI.md`
+6. `prompts/setup/06-ANALYZE-PROJECTS.md`, only when projects already exist
+7. `prompts/setup/07-LINK-MEMORY.md`
+8. `prompts/setup/08-INITIALIZE-GIT.md`
+9. `prompts/VERIFY-WORKSPACE.md`
 
 The manager owns user questions and approval gates. Spawn clean-context subagents only
 where a stage explicitly requests them. If subagents are unavailable, execute that
@@ -81,10 +83,15 @@ Setup is complete when:
 
 - one outer workspace root is confirmed;
 - Hermes is installed and its required local capabilities are verified;
+- Hermes points to the confirmed outer folder as its active project and terminal
+  working directory;
 - missing skeleton files exist without replacing prior work;
+- a reviewed root `USER.md` exists or onboarding was explicitly declined;
 - `wiki/` has an index, schema, log, raw-source area, and interlinked pages;
 - approved existing projects have sourced wiki entries;
 - memory routing is present or was explicitly declined;
 - the outer workspace is a Git repository;
+- project profiles match final live Git paths, remotes, and connection modes;
 - the user has reviewed all changes;
-- a fresh session can retrieve sourced knowledge through `wiki/index.md`.
+- a fresh session can retrieve user context and sourced knowledge through `USER.md` and
+  `wiki/index.md`.
