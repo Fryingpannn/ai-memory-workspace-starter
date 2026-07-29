@@ -60,7 +60,7 @@ If onboarding was already completed or the user declines, continue without repea
 Run:
 
 ```text
-/init This is a multi-project outer workspace for shared instructions and long-term memory. Treat immediate child repositories as separate projects. During this root initialization, use only their immediate names; do not inspect or edit their contents. Create or update only the root AGENTS.md. Keep it concise and focus on root routing, verified root commands, source-of-truth boundaries, and real pitfalls.
+/init This is a multi-project outer workspace for shared instructions and long-term memory. Treat immediate child repositories as separate projects. During this root initialization, use only their immediate names; do not inspect or edit their contents. Create or update only the root AGENTS.md. Keep it concise and focus on root routing, verified root commands, source-of-truth boundaries, and real pitfalls. Avoid recording transient setup state such as whether root Git, remotes, or profiles exist yet because later setup stages may change them.
 ```
 
 Let Hermes inspect the workspace and finish the native `/init` turn. End the Hermes

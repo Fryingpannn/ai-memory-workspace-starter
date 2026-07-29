@@ -46,5 +46,9 @@ The test passes when:
 If any check fails, do not record the completion sentence. Report the mismatch, repair
 it through the relevant setup stage, and rerun this test from another fresh session.
 
+When repaired verification changes will be committed, show every exact path and a
+one-line factual summary before requesting approval. Do not ask approval using only a
+file count.
+
 After the test passes, remove the temporary setup clone only when the agent created it
 for this workflow. Report the removed path. Never remove a clone supplied by the user.

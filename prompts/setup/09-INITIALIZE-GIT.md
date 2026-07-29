@@ -53,9 +53,12 @@ If the user chooses submodules:
 ## Review and Save
 
 1. Show every changed file.
-2. Show `git diff --stat` and `git status`.
+2. Show `git diff --stat` and `git status`. For new untracked files, list their paths;
+   an empty diff is not proof that nothing will be committed.
 3. Confirm no child project was modified or staged.
-4. Ask before the first commit.
+4. After staging, derive the exact path list and count from Git, show both, and ask
+   before the first commit. If the derived set differs from an earlier review, stop and
+   request approval for the corrected set.
 5. Ask before creating repositories or pushing. One question may cover an exact reviewed
    private-repository plan, including names, commits, and destinations.
 6. Never use the public setup repository as the outer workspace remote.
@@ -68,6 +71,10 @@ After the final Git choice, refresh each registered project profile from live Gi
 - connection mode: independent or submodule;
 - remote URL or confirmed `NONE`;
 - remote default branch.
+
+Also recheck root `AGENTS.md` for setup-time Git claims produced before this stage.
+Replace stale claims about root Git, remotes, or child connection modes with the final
+reviewed state and show the exact diff.
 
 Do not point an in-workspace project at `projects/local-paths.md`. That file is only for
 projects outside the outer workspace. Do not leave `UNKNOWN` when Git can answer the

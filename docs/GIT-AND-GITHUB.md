@@ -20,8 +20,9 @@ When child projects have their own repositories, choose explicitly:
   Git workflow.
 
 Before work that needs current code, fetch and fast-forward the outer repository from
-its tracked remote default branch, normally `origin/main`. Then sync submodule URLs and
-update recursively to the commits pinned by the parent. Do not independently advance a
+its tracked remote default branch when a remote exists. If it is local-only, report
+that and continue from verified local state. Then sync submodule URLs and update
+recursively to the commits pinned by the parent. Do not independently advance a
 submodule beyond its pinned commit. Stop on local changes or divergence.
 
 ## GitHub Is the Optional Remote Copy

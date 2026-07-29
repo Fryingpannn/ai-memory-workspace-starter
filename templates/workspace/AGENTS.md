@@ -71,7 +71,8 @@ This workspace helps [OWNER OR TEAM] manage [AREAS OF WORK] and produce
 
 - Preserve existing work and unrelated changes.
 - Before work that needs current Git-backed project state, fetch and fast-forward the
-  outer repository from its tracked remote default branch, normally `origin/main`.
+  outer repository from its tracked remote default branch when a remote exists. If the
+  outer workspace is local-only, report that and continue from verified local state.
 - For submodules, sync URLs and update recursively to the commits pinned by the outer
   repository. Do not independently advance a submodule beyond its pinned commit.
 - Preserve local changes and stop on divergence instead of overwriting work.

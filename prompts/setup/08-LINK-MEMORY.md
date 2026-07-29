@@ -15,7 +15,7 @@ Use this exact block, adding only lines not already represented:
 - Read `USER.md` for confirmed user context and working preferences.
 - Use `wiki/index.md` as long-term memory and follow `wiki/SCHEMA.md` when storing durable entities and relationships.
 - Read `projects/index.md` before entering a child project.
-- Before work requiring current code, fast-forward the outer tracked branch, normally `origin/main`, and update submodules recursively to the commits pinned by the parent. Preserve local changes and stop on divergence.
+- Before work requiring current code, fast-forward the outer tracked branch when a remote exists, then update submodules recursively to the commits pinned by the parent. If no outer remote exists, report that the workspace is local-only and continue from verified local state. Preserve local changes and stop on divergence.
 ```
 
 ## Canonical AGENTS.md

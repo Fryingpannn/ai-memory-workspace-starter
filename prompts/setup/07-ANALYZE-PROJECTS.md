@@ -69,6 +69,8 @@ The integrator:
 - appends one dated entry to `wiki/log.md`;
 - updates `projects/index.md` and project profiles when present;
 - cites project-relative source paths;
+- records a relationship endpoint as known when a source names it, even if the
+  transport, schema, or integration contract remains unknown;
 - never edits a project folder.
 
 Show all wiki changes and confirm no project file changed.
