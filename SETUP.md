@@ -11,7 +11,8 @@ the manager for the entire setup.
 Set up my AI memory workspace from this repository:
 https://github.com/Fryingpannn/ai-memory-workspace-starter
 
-Start with SETUP.md and follow the setup index.
+Read SETUP.md from GitHub before cloning. If a clone is needed, use a temporary staging
+directory, not my current folder. Then follow the setup index.
 ```
 
 ## Goal
@@ -44,6 +45,15 @@ temporary staging directory.
 - Do not personalize the staging clone.
 - Keep its Git history and remote separate from the user's workspace.
 - Record the staging path for the scaffold stage.
+
+If the starter was already cloned directly into an originally empty working folder:
+
+1. Stop before personalization.
+2. Confirm no user files were displaced.
+3. Move that clone to an agent-created temporary staging path.
+4. Restore the original empty folder as the candidate outer workspace.
+
+If prior contents are uncertain, stop and ask instead of moving anything.
 
 ## Routed Workflow
 

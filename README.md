@@ -11,7 +11,8 @@ Paste this into the agent you already use:
 Set up my AI memory workspace from this repository:
 https://github.com/Fryingpannn/ai-memory-workspace-starter
 
-Start with SETUP.md and follow the setup index.
+Read SETUP.md from GitHub before cloning. If a clone is needed, use a temporary staging
+directory, not my current folder. Then follow the setup index.
 ```
 
 The agent asks whether you already have one outer workspace folder.
