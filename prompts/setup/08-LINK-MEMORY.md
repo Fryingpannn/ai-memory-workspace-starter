@@ -12,7 +12,6 @@ Use this exact block, adding only lines not already represented:
 ```text
 ## Shared Workspace Routing
 
-- For installation or workspace-setup requests, read `SETUP.md` and follow its next routed stage.
 - Read `USER.md` for confirmed user context and working preferences.
 - Use `wiki/index.md` as long-term memory and follow `wiki/SCHEMA.md` when storing durable entities and relationships.
 - Read `projects/index.md` before entering a child project.

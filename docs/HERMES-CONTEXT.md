@@ -1,7 +1,7 @@
 # Hermes Context Files
 
-Hermes can read project context from several supported files. This starter uses
-`AGENTS.md` as the canonical project instructions.
+Hermes can read project context from several supported files. The installed workspace
+uses `AGENTS.md` as its canonical project instructions.
 
 `CLAUDE.md` exists only so Claude Code can enter through its native context file and then
 follow the same canonical instructions.
@@ -9,8 +9,8 @@ follow the same canonical instructions.
 Do not add a root `.hermes.md` or `HERMES.md` unless you intentionally want
 Hermes-specific instructions to take priority over `AGENTS.md`.
 
-Hermes keeps its global personality file outside this repository, so this starter does
-not include a root `SOUL.md`.
+Hermes keeps its global personality file outside the project, so the workspace template
+does not include `SOUL.md`.
 
 Hermes contributes three native context layers during setup:
 
@@ -23,8 +23,9 @@ missing `AGENTS.md`. It then supervises one Hermes session for onboarding and `/
 and resumes the remaining setup afterward.
 
 When root `AGENTS.md` is missing, Hermes `/init` is intentionally its native source.
-Pre-existing files remain approval-gated, and the starter `AGENTS.md` is used only when
-native initialization is unavailable.
+Pre-existing files remain approval-gated, and the fallback template is used only when
+native initialization is unavailable. It lives at
+`templates/workspace/AGENTS.md`; the repository-root `AGENTS.md` governs this installer.
 
 Hermes's user-level profile memory remains separate from the root workspace `USER.md`.
 Stage 5 reuses the confirmed onboarding answers to draft the portable root file without

@@ -2,8 +2,9 @@
 
 ## The User Only Has the Public Repository Link
 
-Read `SETUP.md`. Clone the starter into an agent-created temporary directory, then use
-it as the instruction and skeleton source. Do not personalize or push from that clone.
+Read `SETUP.md`. Clone the setup package into an agent-created temporary directory, then
+use its prompts and `templates/workspace/` scaffold. Do not personalize or push from
+that clone.
 
 ## The User Does Not Have an Outer Workspace
 
@@ -57,8 +58,8 @@ manager must complete Stage 3, then run Hermes `/init` in Stage 4.
 ## Hermes `/init` Fails
 
 Retry once after checking Hermes authentication, active project, `terminal.cwd`, and
-file tools. If it still fails, copy the starter `AGENTS.md` only when the root file is
-missing, report the fallback, and continue. Never replace an existing file.
+file tools. If it still fails, copy `templates/workspace/AGENTS.md` only when the target
+root file is missing, report the fallback, and continue. Never replace an existing file.
 
 ## A Source Is Missing
 

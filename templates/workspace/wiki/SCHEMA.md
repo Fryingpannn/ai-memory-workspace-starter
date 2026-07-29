@@ -46,4 +46,4 @@ and important entities without pages.
 ## [YYYY-MM-DD] action | Short title
 ```
 
-Vector search, embeddings, databases, and RAG are not required for this starter.
+Vector search, embeddings, databases, and RAG are not required for this workspace.

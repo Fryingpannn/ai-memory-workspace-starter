@@ -58,7 +58,7 @@ If the user chooses submodules:
 4. Ask before the first commit.
 5. Ask before creating repositories or pushing. One question may cover an exact reviewed
    private-repository plan, including names, commits, and destinations.
-6. Never push workspace memory to the public starter remote.
+6. Never use the public setup repository as the outer workspace remote.
 
 ## Reconcile Project Metadata
 
@@ -76,9 +76,5 @@ field read-only.
 Check current branch, cleanliness, ahead/behind state, divergence, and recursive
 submodule status live and report them during final review. Do not store those changing
 values as timeless profile facts.
-
-After the target contains every routed prompt and the reviewed Git state is safe,
-remove the temporary starter clone only when it was created by this setup. Report the
-removed path. Never remove a clone supplied by the user.
 
 Return `READY_FOR_VERIFICATION` after the reviewed local Git state is safe.

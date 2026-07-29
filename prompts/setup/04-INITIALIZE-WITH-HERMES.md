@@ -76,9 +76,10 @@ Confirm:
 - no other workspace file changed during `/init`;
 - confirmed onboarding answers are available for Stage 5 without asking twice.
 
-If native `/init` is unavailable or fails after a bounded retry, copy the starter
-`AGENTS.md` as a missing-only fallback, state that Hermes initialization did not
-complete, and continue. Never replace an existing file with the fallback.
+If native `/init` is unavailable or fails after a bounded retry, copy
+`templates/workspace/AGENTS.md` as a missing-only fallback, state that Hermes
+initialization did not complete, and continue. Never replace an existing file with the
+fallback.
 
 Return `HERMES_INIT_COMPLETE`, the `AGENTS.md` outcome, and the confirmed onboarding
 answers to the setup manager.

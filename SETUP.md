@@ -11,8 +11,8 @@ the manager for the entire setup.
 Set up my AI memory workspace from this repository:
 https://github.com/Fryingpannn/ai-memory-workspace-starter
 
-Read SETUP.md from GitHub before cloning. If a clone is needed, use a temporary staging
-directory, not my current folder. Then follow the setup index.
+Start with SETUP.md. Use this repository only as temporary setup instructions and a
+template source; do not turn its clone into my workspace.
 ```
 
 ## Goal
@@ -20,8 +20,8 @@ directory, not my current folder. Then follow the setup index.
 Turn one outer folder into a files-first memory workspace without moving or rewriting
 its existing projects.
 
-The starter repository supplies instructions and missing skeleton files. It is not the
-user's personalized workspace.
+This repository supplies instructions and missing-file templates. Its clone is never
+the user's personalized workspace.
 
 ## Global Rules
 
@@ -46,9 +46,9 @@ temporary staging directory.
 - Do not clone it over the user's outer folder.
 - Do not personalize the staging clone.
 - Keep its Git history and remote separate from the user's workspace.
-- Record the staging path for the scaffold stage.
+- Record the staging path for the entire setup workflow.
 
-If the starter was already cloned directly into an originally empty working folder:
+If this repository was already cloned directly into an originally empty working folder:
 
 1. Stop before personalization.
 2. Confirm no user files were displaced.
@@ -77,7 +77,7 @@ where a stage explicitly requests them. If subagents are unavailable, execute th
 stage in isolation and avoid unrelated context.
 
 After Stage 1, use the confirmed outer workspace as the working directory and project
-root for every remaining stage.
+root for every remaining stage. Continue reading routed prompts from the staging clone.
 
 ## Completion
 
@@ -99,4 +99,5 @@ Setup is complete when:
 - project profiles match final live Git paths, remotes, and connection modes;
 - the user has reviewed all changes;
 - a fresh session can retrieve user context and sourced knowledge through `USER.md` and
-  `wiki/index.md`.
+  `wiki/index.md`;
+- the agent-created temporary setup clone was removed after verification.

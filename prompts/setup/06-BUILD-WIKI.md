@@ -53,6 +53,7 @@ editing it.
 
 Seed only confirmed workspace-level knowledge. Project-specific knowledge is added in
 Stage 7. Link the root `USER.md` from `wiki/index.md`; do not duplicate personal facts
-in a wiki user-profile page.
+in a wiki user-profile page. Replace every bracketed placeholder in
+`wiki/pages/workspace-profile.md` with the confirmed purpose, scope, and provenance.
 
 Return the created or changed files and the proposed wiki schema for user review.

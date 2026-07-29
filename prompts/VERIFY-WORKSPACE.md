@@ -35,7 +35,9 @@ The test passes when:
 - project remote, remote default branch, and connection mode match live read-only Git
   checks;
 - no profile points to a missing file;
-- no unresolved bracketed starter placeholder remains in `USER.md` or project profiles;
+- no unresolved bracketed placeholder remains in `USER.md`,
+  `wiki/pages/workspace-profile.md`, or registered project profiles; exclude the
+  reusable `projects/project-template.md`;
 - `UNKNOWN` is used only when the relevant source or live read-only check truly cannot
   answer the field;
 - the parent and recursive submodule status are reported when submodules exist;
@@ -43,3 +45,6 @@ The test passes when:
 
 If any check fails, do not record the completion sentence. Report the mismatch, repair
 it through the relevant setup stage, and rerun this test from another fresh session.
+
+After the test passes, remove the temporary setup clone only when the agent created it
+for this workflow. Report the removed path. Never remove a clone supplied by the user.
