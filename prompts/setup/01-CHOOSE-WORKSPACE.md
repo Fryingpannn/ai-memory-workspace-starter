@@ -29,7 +29,8 @@ Show:
 - whether it exists;
 - whether it is already a Git repository;
 - immediate files and folders only;
-- whether `AGENTS.md`, `CLAUDE.md`, or `wiki/` already exist;
+- whether `AGENTS.md` or `wiki/` already exist;
+- whether a `CLAUDE.md` is already present (do not create one);
 - any obvious file collisions with the starter.
 
 Do not recursively scan project folders.

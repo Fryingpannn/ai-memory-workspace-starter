@@ -16,11 +16,13 @@ the exact path, and use it as the project root for the remaining stages.
 That is expected. Add only missing skeleton files. Record collisions and never replace
 an existing file silently.
 
-## AGENTS.md or CLAUDE.md Already Exists
+## AGENTS.md Already Exists
 
 Preserve it during scaffolding. Follow `prompts/setup/06-FINALIZE-AGENTS.md` to create
 and review `AGENTS.proposed.md`. Replace the old `AGENTS.md` only after the user confirms
-the complete fused file. Add a missing `CLAUDE.md` bridge only after review.
+the complete fused file. Do not create a `CLAUDE.md`. If one already exists, preserve
+it. Claude Code loads that file instead of `AGENTS.md` unless its first line is
+`@AGENTS.md`.
 
 ## USER.md Already Exists
 
@@ -40,8 +42,9 @@ submodules silently.
 
 ## Projects Are Outside the Outer Workspace
 
-Finish the guided setup without them. Connecting scattered projects is an advanced
-manual step and is not part of the one-prompt workflow.
+Finish the guided setup without them. Connect an external project later with
+`skills/connect-project/SKILL.md`. The skill records the machine-specific path in
+`projects/local-paths.md` and does not move the project.
 
 ## A Source Is Missing
 

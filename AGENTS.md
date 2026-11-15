@@ -17,5 +17,11 @@ This repository is a setup package, not a personalized memory workspace.
 - Create a missing target `AGENTS.md` from the template.
 - For an existing target `AGENTS.md`, create a complete fused proposal and replace the
   original only after explicit user review and confirmation.
+- Do not create a target `CLAUDE.md`. `AGENTS.md` is the only canonical instruction
+  file. A user who needs Claude-only notes can add a `CLAUDE.md` whose first line is
+  `@AGENTS.md`.
+- Connect a child or existing project with
+  `templates/workspace/skills/connect-project/SKILL.md`. Do not deliver a paste
+  prompt for that procedure.
 - Keep setup prompts concise and update every route when stages move.
 - Verify links, template paths, and a fresh remote clone before publishing changes.
