@@ -26,6 +26,12 @@ instructions when working inside it.
 - Before work requiring current code, sync the outer tracked branch when a remote
   exists. For submodules, update to the commits pinned by the outer repository.
 
+## Skills
+
+Use `skills/connect-project/SKILL.md` when creating, importing, registering,
+connecting, or repairing a project's connection to this workspace. Load that skill
+instead of improvising a connection procedure.
+
 ## Working Style
 
 - Prefer practical, concise, execution-focused help. Answer only what was asked.

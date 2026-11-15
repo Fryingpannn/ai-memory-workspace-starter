@@ -9,6 +9,7 @@ The final file should include:
 - `Memory Reads`;
 - `Memory Writes`;
 - `Repository Map`;
+- `Skills`, including when to use `skills/connect-project/SKILL.md`;
 - `Working Style`;
 - every instruction that existed in the user's original `AGENTS.md`.
 
@@ -18,7 +19,8 @@ child-repository names. Keep the additions concise.
 ## If AGENTS.md Was Created From the Template
 
 Personalize it in place. Replace generic repository-map entries with the observed
-workspace folders and child repositories where helpful. Show the exact diff.
+workspace folders and child repositories where helpful. Keep the Skills section.
+Show the exact diff.
 
 ## If AGENTS.md Existed Before Setup
 
@@ -26,8 +28,9 @@ workspace folders and child repositories where helpful. Show the exact diff.
 2. Create `AGENTS.proposed.md` beside it.
 3. Copy every original instruction into the proposal without silently deleting or
    weakening anything.
-4. Add only missing memory-read, memory-write, repository-map, and working-style
-   guidance from `templates/workspace/AGENTS.md`.
+4. Add only missing memory-read, memory-write, repository-map, skills, and
+   working-style guidance from `templates/workspace/AGENTS.md`. Keep the
+   connect-project skill reference.
 5. Remove duplication inside the proposal only when the meaning is fully preserved.
 6. Show the complete proposal and an exact diff against the original.
 7. Ask the user to review and confirm the replacement.
@@ -39,16 +42,18 @@ workspace folders and child repositories where helpful. Show the exact diff.
 If the user declines or requests changes, keep the original file and revise or remove
 only the proposal. Never delete the original before confirmation.
 
-## CLAUDE.md Compatibility Bridge
+## No CLAUDE.md
 
-`AGENTS.md` remains canonical. A missing `CLAUDE.md` receives:
+Do not create a `CLAUDE.md`. `AGENTS.md` is the only canonical instruction file.
+Claude Code loads it natively when no `CLAUDE.md` or `CLAUDE.local.md` is present in
+the working directory or above it. A prose line that says to read `AGENTS.md` does
+not load that file, and a `CLAUDE.md` blocks native loading in this directory and in
+nested child projects.
 
-```text
-Read AGENTS.md. It is the canonical entry document for this workspace. Everything there applies here.
-```
-
-If `CLAUDE.md` existed before setup and lacks an equivalent reference, show that line
-and its insertion location, then ask before adding it. Do not copy the full routing
-content into `CLAUDE.md`.
+Preserve a `CLAUDE.md` that already exists. A user who needs Claude-only notes can
+add one whose first line is `@AGENTS.md` (those characters, not wrapped in
+backticks). That import is how Claude Code reads the canonical file when a
+`CLAUDE.md` is present. Show that change and wait for approval. Do not copy
+workspace routing into `CLAUDE.md`.
 
 Return the exact final paths and diff before continuing.

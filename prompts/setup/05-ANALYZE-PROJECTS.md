@@ -34,7 +34,8 @@ Each worker may inspect:
 
 - immediate project structure;
 - Git remote, branch, and status read-only;
-- `README.md`, `AGENTS.md`, and `CLAUDE.md`;
+- `README.md`, `AGENTS.md`, and an existing `CLAUDE.md` when the project already has
+  one;
 - package or language manifests;
 - a documentation index and a few clearly relevant architecture or decision files.
 

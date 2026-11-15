@@ -28,7 +28,11 @@ The test passes when:
   routing, Commands, Source-of-Truth, Privacy, or Pitfalls sections;
 - when `AGENTS.md` existed before setup, the final file contains every original
   instruction plus the user-approved fused additions, and `AGENTS.proposed.md` is gone;
-- `CLAUDE.md` delegates to `AGENTS.md` instead of maintaining competing rules;
+- `skills/connect-project/SKILL.md` exists, and root `AGENTS.md` names that skill and
+  when to use it;
+- setup did not create a `CLAUDE.md`. A pre-existing `CLAUDE.md` still has its prior
+  content, aside from an approved first line of `@AGENTS.md` when the user asked for
+  Claude-only notes;
 - user context comes from the root `USER.md`;
 - `USER.md` is under 100 lines and contains only compact, durable, user-confirmed
   information;

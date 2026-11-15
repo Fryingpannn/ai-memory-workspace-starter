@@ -18,6 +18,7 @@ Spawn one clean-context scaffold subagent when supported. Give it only:
 - Never edit an existing project folder.
 - Preserve existing `AGENTS.md`, `CLAUDE.md`, `USER.md`, `README.md`, `.gitignore`, and
   `wiki/` byte-for-byte during this stage.
+- Do not create a `CLAUDE.md` when it is missing.
 - Record every collision for review.
 
 The desired root skeleton is:
@@ -25,7 +26,6 @@ The desired root skeleton is:
 ```text
 .gitignore
 AGENTS.md
-CLAUDE.md
 USER.md
 README.md
 outputs/
@@ -33,6 +33,9 @@ projects/
 skills/
 wiki/
 ```
+
+`skills/` includes `connect-project/SKILL.md`. Copy that skill with the rest of the
+missing scaffold.
 
 Copy each missing file or folder from the workspace template. If root `AGENTS.md` is
 missing, copy `templates/workspace/AGENTS.md`; Stage 6 personalizes it after user and

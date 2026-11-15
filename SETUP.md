@@ -12,7 +12,10 @@ Set up my AI memory workspace from this repository:
 https://github.com/Fryingpannn/ai-memory-workspace-starter
 
 Start with SETUP.md. Use this repository only as temporary setup instructions and a
-template source; do not turn its clone into my workspace.
+template source; do not turn its clone into my workspace. Do not create a CLAUDE.md.
+Install skills/connect-project/SKILL.md into the workspace and reference it from
+AGENTS.md. When setup finishes, connect projects with that skill. Do not ask me to
+paste a separate connect prompt.
 ```
 
 ## Goal
@@ -29,12 +32,17 @@ the user's personalized workspace.
 - Keep the user's current agent as setup manager for the entire workflow.
 - Never replace existing content except the explicitly reviewed `AGENTS.md` fusion in
   Stage 6. Use only reviewed, targeted edits.
-- Never move or edit an existing project during setup.
+- Never move an existing project during setup. Do not edit one either, except an
+  instruction-file change the user approved through the connect-project skill.
 - Never read secrets, generated dependencies, or broad source trees.
+- Do not create a `CLAUDE.md`. `AGENTS.md` is the only canonical instruction file.
+  A user who needs Claude-only notes can add a `CLAUDE.md` whose first line is
+  `@AGENTS.md`.
 - Show proposed changes before editing an existing `USER.md`, `AGENTS.md`, or
   `CLAUDE.md`.
 - Ask before initializing Git, committing, creating a remote, or pushing.
-- Do not support scattered projects in the guided setup. They can be connected later.
+- Do not support scattered projects in the guided setup. Connect them later with
+  `skills/connect-project/SKILL.md`.
 - Read only the next routed prompt.
 
 ## Stage 0: Make the Starter Available
@@ -92,11 +100,13 @@ Setup is complete when:
 - memory routing is present or was explicitly declined;
 - the outer workspace is a Git repository;
 - project profiles match final live Git paths, remotes, and connection modes;
+- `skills/connect-project/SKILL.md` is installed and the root `AGENTS.md` says when
+  to use it;
 - the user has reviewed all changes;
 - a fresh session can retrieve user context and sourced knowledge through `USER.md` and
   `wiki/index.md`;
-- the optional inner-project memory-bridge prompt was delivered without editing child
-  projects;
+- a project the user asked to connect was handled with that skill, and no paste
+  prompt was delivered;
 - the agent-created temporary setup clone was removed after verification and the final
   handoff.
 

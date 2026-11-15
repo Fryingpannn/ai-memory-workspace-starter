@@ -16,7 +16,10 @@ Set up my AI memory workspace from this repository:
 https://github.com/Fryingpannn/ai-memory-workspace-starter
 
 Start with SETUP.md. Use this repository only as temporary setup instructions and a
-template source; do not turn its clone into my workspace.
+template source; do not turn its clone into my workspace. Do not create a CLAUDE.md.
+Install skills/connect-project/SKILL.md into the workspace and reference it from
+AGENTS.md. When setup finishes, connect projects with that skill. Do not ask me to
+paste a separate connect prompt.
 ```
 
 The setup manager asks whether an outer workspace already exists. It uses that folder
@@ -27,9 +30,10 @@ or creates one after approval. Existing projects stay in place.
 - `SETUP.md`: the only setup entrypoint.
 - `prompts/setup/`: short, ordered setup stages.
 - `prompts/VERIFY-WORKSPACE.md`: fresh-session acceptance test.
-- `prompts/CONNECT-INNER-PROJECTS.md`: optional reviewed bridge for child-project
-  instruction files.
-- `templates/workspace/`: missing-only files for the user's outer workspace.
+- `prompts/CONNECT-INNER-PROJECTS.md`: final handoff. It uses the connect-project
+  skill, then removes the temporary setup clone.
+- `templates/workspace/`: missing-only files for the user's outer workspace,
+  including `skills/connect-project/SKILL.md`.
 - `docs/`: reference material for the setup agent and implementing user.
 
 The temporary clone is removed after verification and the final handoff. Its Git history
@@ -45,16 +49,18 @@ and remote are never copied into the user's workspace.
 6. Create or review a fused canonical `AGENTS.md`.
 7. Review or initialize the outer Git repository.
 8. Prove retrieval from a fresh session.
-9. Deliver the optional inner-project bridge prompt, then remove the temporary setup
-   clone.
+9. Connect a requested project with the connect-project skill, then remove the
+   temporary setup clone. Do not deliver a paste prompt.
 
 ## Ownership Boundaries
 
 The portable workspace owns:
 
 - root `USER.md`;
-- the `CLAUDE.md` compatibility bridge;
-- `projects/`, `skills/`, `outputs/`, and `wiki/`.
+- canonical `AGENTS.md`, and no generated `CLAUDE.md`. A user who needs Claude-only
+  notes can add a `CLAUDE.md` whose first line is `@AGENTS.md`;
+- `projects/`, `skills/` (including `skills/connect-project/SKILL.md`), `outputs/`,
+  and `wiki/`.
 
 Existing target files are preserved except for a user-confirmed replacement of
 `AGENTS.md` with its reviewed fused proposal. Git initialization, commits, remote
